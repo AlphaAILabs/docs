@@ -1,68 +1,98 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "AlphaLabs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#5b5fff",
+    "light": "#7c7fff",
+    "dark": "#4040d9"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "开始使用",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "快速开始",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "getting-started/installation",
+              "getting-started/activation"
             ]
           },
           {
-            "group": "Customization",
+            "group": "核心概念",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "concepts/wear-rate",
+              "concepts/trading-strategy",
+              "concepts/risk-management"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "产品",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "交易插件",
             "pages": [
-              "api-reference/introduction"
+              "products/edgex-variational",
+              "products/lighter-edgex"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "功能特性",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "features/auto-trading",
+              "features/alert-system",
+              "features/market-analysis"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "工具",
+        "groups": [
+          {
+            "group": "计算工具",
+            "pages": [
+              "tools/wear-calculator",
+              "tools/profit-calculator"
+            ]
+          },
+          {
+            "group": "分析工具",
+            "pages": [
+              "tools/market-scanner",
+              "tools/backtester"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API 文档",
+        "groups": [
+          {
+            "group": "API 概览",
+            "pages": [
+              "api-reference/introduction",
+              "api-reference/authentication"
+            ]
+          },
+          {
+            "group": "交易接口",
+            "pages": [
+              "api-reference/trading/orders",
+              "api-reference/trading/positions",
+              "api-reference/trading/market-data"
+            ]
+          },
+          {
+            "group": "Webhook",
+            "pages": [
+              "api-reference/webhook/setup",
+              "api-reference/webhook/events"
             ]
           }
         ]
@@ -71,19 +101,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "官网",
+          "href": "https://alphalabs.app",
+          "icon": "globe"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "anchor": "社区",
+          "href": "https://x.com/Alpha_alabs",
+          "icon": "x-twitter"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Telegram",
+          "href": "https://t.me/+ojol7w-JEVNmZjY1",
+          "icon": "telegram"
         }
       ]
     }
@@ -95,15 +125,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "支持",
+        "href": "mailto:contact@alphalabs.app"
+      },
+      {
+        "label": "下载插件",
+        "href": "https://chrome.google.com/webstore"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
@@ -119,9 +148,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/Alpha_alabs",
+      "github": "https://github.com/AlphaAILabs",
+      "telegram": "https://t.me/+ojol7w-JEVNmZjY1"
     }
   }
 }
