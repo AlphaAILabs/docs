@@ -1,0 +1,204 @@
+---
+title: 常见问题
+description: 'AlphaLabs 产品使用常见问题解答'
+icon: 'circle-question'
+---
+
+## 产品激活相关
+
+<AccordionGroup>
+  <Accordion title="邀请码是如何分配的？">
+    一个社区邀请码只会分配一个邀请码，比如 AlphaLabs。邀请码是绑定在 Labs 的，只需要绑定一次，没有转让概念。
+  </Accordion>
+  <Accordion title="如何获得邀请码？">
+    目前可以通过以下方式获得邀请码：
+
+    **直接使用**：
+    - `AlphaLabs_2025` - 可直接使用的邀请码
+
+    **合作伙伴获取**：
+    - 联系 [Alpha Doge](https://x.com/retireeeeeeeee) 获取专属邀请码
+
+    **社区活动**：
+    - 关注官方 [X (Twitter)](https://x.com/Alpha_alabs) 参与抽奖活动
+    - 加入 [Telegram 社区](https://t.co/ZNnay6dnxz) 获得社区贡献奖励
+  </Accordion>
+  <Accordion title="按量付费如何收费？">
+    按量付费的具体收费标准需要联系客服咨询，我们会根据您的需求提供个性化方案。请通过 [Telegram](https://t.co/ZNnay6dnxz) 联系客服。
+  </Accordion>
+  <Accordion title="可以同时使用多个产品吗？">
+    可以。每个产品独立激活，可以同时使用多个交易插件。
+  </Accordion>
+  <Accordion title="激活后如何开始使用？">
+    激活成功后，请按照以下步骤：
+    1. 配置 [EdgeX 平台](/platforms/edgex-setup)
+    2. 配置 [Variational 平台](/platforms/variational-setup)
+    3. 设置 [安全警告](/platforms/security-alerts)
+    4. [安装插件](/getting-started/installation)
+  </Accordion>
+</AccordionGroup>
+
+## 平台配置相关
+
+<AccordionGroup>
+  <Accordion title="为什么连接钱包失败？">
+    请检查以下几点：
+    1. 确认钱包是否已解锁
+    2. 确认网络是否正确（推荐使用 Arbitrum）
+    3. 尝试刷新页面重新连接
+    4. 检查浏览器是否阻止了弹窗
+    5. 推荐使用 Rabby 钱包以获得最佳体验
+  </Accordion>
+  <Accordion title="存款多久到账？">
+    到账时间取决于所选网络：
+    - **Arbitrum 网络**：通常 1-5 分钟
+    - **Ethereum 网络**：10-30 分钟
+    - **BNB Chain**：5-15 分钟
+    
+    具体时间取决于网络拥堵情况。
+  </Accordion>
+  <Accordion title="为什么推荐使用 Rabby 钱包？">
+    Rabby 钱包具有以下优势：
+    - 更好的多链支持
+    - 优秀的交易预览功能
+    - 更安全的交易确认机制
+    - 对 DeFi 协议的原生支持
+    - 更直观的用户界面
+  </Accordion>
+  <Accordion title="如何查看交易历史？">
+    在各平台的交易面板中：
+    1. 点击 "History" 或"历史"标签
+    2. 可以查看订单历史、交易记录等
+    3. 支持导出交易数据进行分析
+  </Accordion>
+</AccordionGroup>
+
+## 插件使用相关
+
+<AccordionGroup>
+  <Accordion title="插件安装失败怎么办？">
+    请尝试以下解决方案：
+    1. 确认使用的是 Chrome 浏览器
+    2. 检查浏览器版本是否为最新
+    3. 关闭其他可能冲突的扩展程序
+    4. 清除浏览器缓存后重试
+    5. 联系技术支持获得帮助
+  </Accordion>
+  <Accordion title="插件连接中断怎么办？">
+    连接中断可能的原因和解决方案：
+    - **网络问题**：检查网络连接稳定性
+    - **浏览器休眠**：确保浏览器标签页保持活跃
+    - **平台维护**：等待平台维护完成
+    - **插件更新**：检查是否有插件更新
+  </Accordion>
+  <Accordion title="如何设置杠杆倍数？">
+    杠杆设置需要在两个地方保持一致：
+    1. **平台前端**：在 EdgeX/Variational 交易界面设置
+    2. **插件配置**：在插件参数中设置相同的杠杆倍数
+    
+    **重要**：两处设置必须完全一致，否则可能导致交易异常。
+  </Accordion>
+  <Accordion title="什么是磨损率？">
+    磨损率是衡量交易执行质量的核心指标，反映实际成交价格与理论最优价格之间的偏差。
+    
+    **AlphaLabs 的优势**：
+    - EdgeX-Variational [001]：0.0032%
+    - Lighter-EdgeX [002]：除平台手续费外无额外磨损
+    - 行业平均：0.05-0.1%
+    
+    了解更多请查看 [磨损率详解](/concepts/wear-rate)。
+  </Accordion>
+</AccordionGroup>
+
+## 安全警告相关
+
+<AccordionGroup>
+  <Accordion title="没有收到告警通知怎么办？">
+    请检查以下几点：
+    1. 确认手机号码是否正确
+    2. 确认手机信号是否正常
+    3. 查看是否被拦截软件屏蔽
+    4. 联系技术支持检查配置
+  </Accordion>
+  <Accordion title="告警太频繁怎么办？">
+    可以调整告警设置：
+    1. 提高告警阈值
+    2. 选择更高级别的告警类型
+    3. 调整告警频率限制
+    4. 联系技术支持优化配置
+  </Accordion>
+  <Accordion title="如何修改告警联系方式？">
+    修改联系方式需要：
+    1. 联系技术支持团队
+    2. 提供新的联系方式
+    3. 验证新联系方式的有效性
+    4. 技术团队更新配置
+  </Accordion>
+</AccordionGroup>
+
+## 技术支持
+
+<AccordionGroup>
+  <Accordion title="如何联系技术支持？">
+    您可以通过以下方式联系我们：
+    
+    **Telegram 社区**（推荐）：
+    - [AlphaLabs 社区](https://t.co/ZNnay6dnxz)
+    
+    **技术团队**：
+    - [@QuarticCat](https://x.com/_quarticcat)
+    - [@Cryptonymk](https://x.com/Cryptonymk)
+    
+    **官方社交媒体**：
+    - [X (Twitter)](https://x.com/Alpha_alabs)
+  </Accordion>
+  <Accordion title="技术支持的服务时间？">
+    我们提供 7×24 小时技术支持：
+    - **紧急问题**：随时响应
+    - **一般问题**：工作日 24 小时内回复
+    - **功能建议**：定期收集和评估
+  </Accordion>
+  <Accordion title="如何报告 Bug 或提出建议？">
+    请通过以下方式报告问题或提出建议：
+    1. 加入 [Telegram 社区](https://t.co/ZNnay6dnxz) 反馈
+    2. 直接联系技术团队
+    3. 在官方 X (Twitter) 留言
+    
+    请提供详细的问题描述和截图，以便我们快速定位和解决问题。
+  </Accordion>
+</AccordionGroup>
+
+## 其他问题
+
+<AccordionGroup>
+  <Accordion title="AlphaLabs 的产品有哪些？">
+    目前我们提供以下交易插件：
+    
+    **EdgeX-Variational [001]**：
+    - 旗舰产品，支持 EdgeX 和 Variational 平台
+    - 磨损率：0.0032%
+    - 功能完整，适合各类用户
+    
+    **Lighter-EdgeX [002]**：
+    - 即将推出的双策略协同插件
+    - 除 EdgeX 平台手续费外无额外磨损
+    - 提供更优的交易体验
+  </Accordion>
+  <Accordion title="产品更新频率如何？">
+    我们持续优化产品：
+    - **功能更新**：每月 1-2 次
+    - **安全更新**：随时发布
+    - **策略优化**：持续进行
+    - **新产品**：根据市场需求推出
+    
+    所有更新都会在社区中提前通知。
+  </Accordion>
+  <Accordion title="数据安全如何保障？">
+    我们采用多重安全措施：
+    - **本地运行**：插件在您的浏览器本地运行
+    - **加密传输**：所有数据传输都经过加密
+    - **最小权限**：只获取必要的交易权限
+    - **开源透明**：核心算法逻辑公开透明
+    - **安全审计**：定期进行安全审计
+  </Accordion>
+</AccordionGroup>

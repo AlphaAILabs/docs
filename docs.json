@@ -7,7 +7,11 @@
     "light": "#7c7fff",
     "dark": "#4040d9"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
+  "modeToggle": {
+    "default": "light",
+    "isHidden": false
+  },
   "css": ["/custom.css"],
   "navigation": {
     "tabs": [
@@ -19,15 +23,14 @@
             "pages": [
               "index",
               "getting-started/installation",
-              "getting-started/activation"
+              "getting-started/activation",
+              "faq"
             ]
           },
           {
             "group": "核心概念",
             "pages": [
-              "concepts/wear-rate",
-              "concepts/trading-strategy",
-              "concepts/risk-management"
+              "concepts/wear-rate"
             ]
           }
         ]
@@ -48,38 +51,6 @@
               "platforms/edgex-setup",
               "platforms/variational-setup",
               "platforms/security-alerts"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "功能特性",
-        "groups": [
-          {
-            "group": "自动化功能",
-            "pages": [
-              "features/auto-trading",
-              "features/alert-system",
-              "features/market-analysis"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "工具",
-        "groups": [
-          {
-            "group": "计算工具",
-            "pages": [
-              "tools/wear-calculator",
-              "tools/profit-calculator"
-            ]
-          },
-          {
-            "group": "分析工具",
-            "pages": [
-              "tools/market-scanner",
-              "tools/backtester"
             ]
           }
         ]

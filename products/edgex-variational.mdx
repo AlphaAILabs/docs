@@ -56,12 +56,9 @@ EdgeX-Variational 是 AlphaLabs 的旗舰交易插件，专为追求极致性能
 ## 技术规格
 
 | 指标 | 数值 |
-|------|------|
+|:----:|:----:|
 | 最低磨损率 | 0.0032% |
 | 平均执行延迟 | < 10ms |
-| 支持交易对 | 200+ |
-| API 调用限制 | 10,000/分钟 |
-| 数据更新频率 | 100ms |
 
 ## 使用前准备
 
@@ -113,7 +110,7 @@ EdgeX-Variational 是 AlphaLabs 的旗舰交易插件，专为追求极致性能
     按照以下建议配置各项参数：
 
     | 参数 | 默认值 | 建议值 | 说明 |
-    |------|--------|--------|------|
+    |:----:|:------:|:------:|:----:|
     | 最大保证金（MM） | 0.5 | 不调整 | 保持默认 |
     | 最大初始保证金（IM） | 0.5 | 不调整 | 保持默认 |
     | 平台间最大价差 BTC | 100 | 100-150 | 自行调整 |
@@ -158,15 +155,3 @@ EdgeX-Variational 是 AlphaLabs 的旗舰交易插件，专为追求极致性能
   - 禁止**同 IP 服务器**开启同一个 Perp 的多主账户对冲
   - EdgeX 和 Variational 运行量化工具要使用**同一个 EOA 钱包地址**
 </Warning>
-
-## 常见问题
-
-<AccordionGroup>
-  <Accordion title="如何获取邀请码？">
-    邀请码通过官方社区活动发放，关注我们的 [X (Twitter)](https://x.com/Alpha_alabs) 和 [Telegram](https://t.co/ZNnay6dnxz) 获取最新活动信息。
-  </Accordion>
-  <Accordion title="如何计算磨损率？">
-    磨损率 = (执行价格 - 理论价格) / 理论价格 × 100%。您可以使用我们的 [磨损计算器](/tools/wear-calculator) 进行精确计算。
-  </Accordion>
-</AccordionGroup>
-

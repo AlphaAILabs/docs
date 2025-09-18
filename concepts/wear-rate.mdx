@@ -118,27 +118,20 @@ description: '理解交易磨损率，优化您的交易成本'
 └── Lighter：$135
 ```
 
-## 磨损率计算器
+## 磨损率估算
 
-使用我们的 [磨损率计算器](/tools/wear-calculator) 来估算您的交易成本：
+您可以使用以下公式来估算您的交易磨损成本：
 
-<Steps>
-  <Step title="输入交易参数">
-    - 交易对
-    - 日均交易量
-    - 平均订单金额
-  </Step>
-  <Step title="选择交易方式">
-    - 手动交易
-    - 使用 AlphaLabs
-    - 其他自动化工具
-  </Step>
-  <Step title="查看对比结果">
-    - 预计磨损成本
-    - 潜在节省金额
-    - ROI 分析
-  </Step>
-</Steps>
+<Info>
+**简单估算公式**：
+日磨损成本 = 日交易量 × 平均订单金额 × 磨损率
+
+**示例**：
+- 日交易量：100 笔
+- 平均订单金额：$1,000
+- 使用 AlphaLabs 磨损率：0.0032%
+- 日磨损成本：100 × $1,000 × 0.0032% = $3.2
+</Info>
 
 ## 优化建议
 
@@ -167,44 +160,7 @@ description: '理解交易磨损率，优化您的交易成本'
   </Accordion>
 </AccordionGroup>
 
-## 磨损率监控
 
-AlphaLabs 提供实时磨损率监控仪表板：
-
-<Warning>
-  磨损率异常时会自动触发告警：
-  - 黄色警告：超过平均值 50%
-  - 红色警告：超过平均值 100%
-  - 自动暂停：超过设定阈值
-</Warning>
-
-### 监控指标
-
-| 指标 | 说明 | 告警阈值 |
-|------|------|----------|
-| 实时磨损率 | 最近 10 笔交易平均 | > 0.005% |
-| 小时磨损率 | 过去 1 小时平均 | > 0.004% |
-| 日磨损率 | 过去 24 小时平均 | > 0.0035% |
-| 累计损耗 | 总磨损成本 | 自定义 |
-
-## 技术原理
-
-### AlphaLabs 磨损优化技术栈
-
-```mermaid
-graph TD
-    A[订单输入] --> B[智能分析引擎]
-    B --> C[市场深度分析]
-    B --> D[价格预测模型]
-    B --> E[流动性评估]
-    C --> F[路由决策]
-    D --> F
-    E --> F
-    F --> G[订单执行]
-    G --> H[实时监控]
-    H --> I[动态调整]
-    I --> F
-```
 
 ## 收益影响
 
@@ -226,16 +182,10 @@ graph TD
 ## 相关资源
 
 <CardGroup cols={2}>
-  <Card title="磨损计算器" icon="calculator" href="/tools/wear-calculator">
-    精确计算您的交易磨损
+  <Card title="EdgeX-Variational [001]" icon="chart-line" href="/products/edgex-variational">
+    了解我们的旗舰交易插件
   </Card>
-  <Card title="策略优化" icon="chart-mixed" href="/concepts/trading-strategy">
-    了解如何优化交易策略
-  </Card>
-  <Card title="风险管理" icon="shield-halved" href="/concepts/risk-management">
-    学习风险控制技巧
-  </Card>
-  <Card title="API 文档" icon="code" href="/api-reference/introduction">
-    集成磨损监控 API
+  <Card title="Lighter-EdgeX [002]" icon="sparkles" href="/products/lighter-edgex">
+    体验下一代双策略插件
   </Card>
 </CardGroup>
