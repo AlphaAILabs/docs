@@ -166,3 +166,60 @@ svg.text-blue-700 {
 [data-callout="info"] b {
   color: #7c7fff !important; /* 使用较浅的紫色 */
 }
+
+/* Product Hero Banner */
+.product-hero {
+  background: linear-gradient(135deg, #8B5FBF 0%, #6366F1 100%);
+  border-radius: 32px;
+  padding: 2rem 3rem;
+  margin: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.8rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.hero-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-box {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 1.2rem 3rem;
+  border-radius: 25px;
+  font-size: 2rem;
+  font-weight: 600;
+  border: none;
+  letter-spacing: 1px;
+}
+
+.date-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
