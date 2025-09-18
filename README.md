@@ -1,44 +1,55 @@
-# Mintlify Starter Kit
+# AlphaLabs 文档
 
-Use the starter kit to get your docs deployed and ready to customize.
+AlphaLabs 产品文档，包含安装指南、使用说明和功能介绍。
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+文档包含以下内容：
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+- 快速开始指南
+- 产品功能介绍
+- 工具使用说明
+- 核心概念解释
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+## 开发环境
 
-## Development
+### 环境要求
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+确保使用 Node.js v22，推荐使用 nvm 管理 Node.js 版本：
 
+```bash
+nvm use v22
 ```
+
+### 本地预览
+
+安装 [Mintlify CLI](https://www.npmjs.com/package/mint) 来本地预览文档：
+
+```bash
 npm i -g mint
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+在文档根目录（包含 `docs.json` 的目录）运行：
 
-```
+```bash
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+在浏览器中访问 `http://localhost:3000` 查看本地预览。
 
-## Publishing changes
+## 发布更改
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+通过 [Mintlify 控制台](https://dashboard.mintlify.com/settings/organization/github-app) 安装 GitHub 应用来同步代码仓库的更改到部署环境。推送到默认分支后，更改会自动部署到生产环境。
 
-## Need help?
+## 需要帮助？
 
-### Troubleshooting
+### 故障排除
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+- 如果开发环境无法运行：运行 `mint update` 确保使用最新版本的 CLI
+- 如果页面显示 404：确保在包含有效 `docs.json` 的文件夹中运行
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
-- [Mintlify community](https://mintlify.com/community)
+### 获取支持
+
+如需技术支持，请访问：https://t.co/ZNnay6dnxz
+
+### 相关资源
+- [Mintlify 官方文档](https://mintlify.com/docs)
+- [Mintlify 社区](https://mintlify.com/community)

@@ -69,33 +69,6 @@
             ]
           }
         ]
-      },
-      {
-        "tab": "API 文档",
-        "groups": [
-          {
-            "group": "API 概览",
-            "pages": [
-              "api-reference/introduction",
-              "api-reference/authentication"
-            ]
-          },
-          {
-            "group": "交易接口",
-            "pages": [
-              "api-reference/trading/orders",
-              "api-reference/trading/positions",
-              "api-reference/trading/market-data"
-            ]
-          },
-          {
-            "group": "Webhook",
-            "pages": [
-              "api-reference/webhook/setup",
-              "api-reference/webhook/events"
-            ]
-          }
-        ]
       }
     ],
     "global": {
@@ -112,7 +85,7 @@
         },
         {
           "anchor": "Telegram",
-          "href": "https://t.me/+ojol7w-JEVNmZjY1",
+          "href": "https://t.co/ZNnay6dnxz",
           "icon": "telegram"
         }
       ]
@@ -126,11 +99,7 @@
     "links": [
       {
         "label": "支持",
-        "href": "mailto:contact@alphalabs.app"
-      },
-      {
-        "label": "下载插件",
-        "href": "https://chrome.google.com/webstore"
+        "href": "https://t.co/ZNnay6dnxz"
       }
     ]
   },
@@ -150,7 +119,7 @@
     "socials": {
       "x": "https://x.com/Alpha_alabs",
       "github": "https://github.com/AlphaAILabs",
-      "telegram": "https://t.me/+ojol7w-JEVNmZjY1"
+      "telegram": "https://t.co/ZNnay6dnxz"
     }
   }
 }
