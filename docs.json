@@ -8,6 +8,7 @@
     "dark": "#4040d9"
   },
   "favicon": "/favicon.svg",
+  "css": ["/custom.css"],
   "navigation": {
     "tabs": [
       {
@@ -32,7 +33,7 @@
         ]
       },
       {
-        "tab": "产品",
+        "tab": "插件",
         "groups": [
           {
             "group": "交易插件",
@@ -42,7 +43,20 @@
             ]
           },
           {
-            "group": "功能特性",
+            "group": "支持平台",
+            "pages": [
+              "platforms/edgex-setup",
+              "platforms/variational-setup",
+              "platforms/security-alerts"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "功能特性",
+        "groups": [
+          {
+            "group": "自动化功能",
             "pages": [
               "features/auto-trading",
               "features/alert-system",
@@ -79,12 +93,12 @@
           "icon": "globe"
         },
         {
-          "anchor": "社区",
+          "anchor": "X",
           "href": "https://x.com/Alpha_alabs",
           "icon": "x-twitter"
         },
         {
-          "anchor": "Telegram",
+          "anchor": "社区",
           "href": "https://t.co/ZNnay6dnxz",
           "icon": "telegram"
         }

@@ -101,22 +101,101 @@ EdgeX-Variational 是 AlphaLabs 的旗舰交易插件，专为追求极致性能
 - 仓位控制
 - 风险对冲
 
-## 安装使用
+## 使用前准备
+
+在开始使用 EdgeX-Variational [001] 插件之前，请确保已完成以下准备工作：
+
+<CardGroup cols={3}>
+  <Card title="EdgeX 平台" icon="chart-line" href="/platforms/edgex-setup">
+    完成 EdgeX 平台注册和配置
+  </Card>
+  <Card title="Variational 平台" icon="chart-mixed" href="/platforms/variational-setup">
+    完成 Variational 平台注册和配置
+  </Card>
+  <Card title="安全警告" icon="shield" href="/platforms/security-alerts">
+    配置饭碗告警系统
+  </Card>
+</CardGroup>
+
+<Warning>
+**重要提醒**：EdgeX 和 Variational 两个平台必须使用**同一个 EOA 钱包地址**进行操作。
+</Warning>
+
+## 插件安装
 
 <Steps>
   <Step title="下载插件">
-    从 [Chrome Web Store](https://chrome.google.com/webstore) 下载 AlphaLabs 插件
+    下载 EdgeX-Variational [001] 插件：
+
+    **文件名**：`perps-extension-variational-edgex-001.zip`
+
+    将安装包解压到桌面或其他便于访问的位置
   </Step>
-  <Step title="安装配置">
-    按照安装向导完成初始配置
-  </Step>
-  <Step title="激活产品">
-    输入邀请码或选择付费方案激活
-  </Step>
-  <Step title="开始交易">
-    配置交易参数，启动自动交易
+  <Step title="安装到 Chrome">
+    1. 打开 Chrome 浏览器
+    2. 访问 `chrome://extensions/`
+    3. 右上角开启 **开发者模式**
+    4. 点击 **加载已解压的扩展程序**
+    5. 选择解压后的插件文件夹
+    6. 确认安装完成
   </Step>
 </Steps>
+
+## 参数配置
+
+<Steps>
+  <Step title="打开插件配置">
+    点击打开插件，点击策略参数配置
+  </Step>
+  <Step title="配置参数">
+    按照以下建议配置各项参数：
+
+    | 参数 | 默认值 | 建议值 | 说明 |
+    |------|--------|--------|------|
+    | 最大保证金（MM） | 0.5 | 不调整 | 保持默认 |
+    | 最大初始保证金（IM） | 0.5 | 不调整 | 保持默认 |
+    | 平台间最大价差 BTC | 100 | 100-150 | 自行调整 |
+    | 平台间最大价差 ETH | 5 | 10-15 | 自行调整 |
+    | 最小平仓价差 BTC | 500 | 500-1000 | 自行调整 |
+    | 最小平仓价差 ETH | 15 | 15-30 | 自行调整 |
+    | 最小开仓数量 BTC | 0.002 | 不调整 | 保持默认 |
+    | 最小开仓数量 ETH | 0.05 | 不调整 | 保持默认 |
+    | 杠杆倍数 BTC | 20 | 10-50 | 需与前端一致 |
+    | 杠杆倍数 ETH | 20 | 10-50 | 需与前端一致 |
+    | Gain | -40 | 实时调整 | 参考 TG 群组公布数值 |
+
+    <Warning>
+      **重要提醒**：
+      - 脚本杠杆倍数要和 EdgeX 和 Variational 前端展示杠杆倍数一致
+      - Gain 数值请参考 Alpha Labs Telegram 群组每天公布的数值，实时调整
+    </Warning>
+  </Step>
+</Steps>
+
+## 启动和运行
+
+<Steps>
+  <Step title="启动策略">
+    点击启动策略执行
+  </Step>
+  <Step title="处理连接问题">
+    如果出现以下错误提示，请按照说明处理：
+
+    - **EdgeX 未连接，请先登录**：刷新 EdgeX 网页，多次进行尝试
+    - **Variational 未连接，请先登录**：刷新 Variational 网页，多次进行尝试
+  </Step>
+</Steps>
+
+## 重要注意事项
+
+<Warning>
+  **运行环境要求**：
+  - 运行量化工具的电脑：**不可以休眠，不可以关机**
+  - 要保持插件在前端：**不可以关闭，否则 Chrome 会杀死量化工具的程序**
+  - 尽量选用**日本、新加坡**等地的**静态住宅 IP**
+  - 禁止**同 IP 服务器**开启同一个 Perp 的多主账户对冲
+  - EdgeX 和 Variational 运行量化工具要使用**同一个 EOA 钱包地址**
+</Warning>
 
 ## 常见问题
 

@@ -1,0 +1,168 @@
+/* 调整 Info 组件的颜色，让它更好地匹配紫色主题 */
+
+/* 尝试多种可能的选择器 */
+.info,
+.callout-info,
+.note-info,
+[data-callout="info"],
+.callout[data-callout="info"],
+.admonition.info,
+.admonition-info {
+  background-color: rgba(91, 95, 255, 0.08) !important;
+  border-color: rgba(91, 95, 255, 0.25) !important;
+  border-left-color: #5b5fff !important;
+}
+
+/* 深色主题 */
+[data-theme="dark"] .info,
+[data-theme="dark"] .callout-info,
+[data-theme="dark"] .note-info,
+[data-theme="dark"] [data-callout="info"],
+[data-theme="dark"] .callout[data-callout="info"],
+[data-theme="dark"] .admonition.info,
+[data-theme="dark"] .admonition-info {
+  background-color: rgba(91, 95, 255, 0.12) !important;
+  border-color: rgba(91, 95, 255, 0.3) !important;
+  border-left-color: #7c7fff !important;
+}
+
+/* Info 图标和文字颜色 */
+.info .icon,
+.callout-info .icon,
+.note-info .icon,
+[data-callout="info"] .icon,
+.callout[data-callout="info"] .icon,
+.admonition.info .icon,
+.admonition-info .icon,
+.info svg,
+.callout-info svg,
+.note-info svg,
+[data-callout="info"] svg,
+.callout[data-callout="info"] svg,
+.admonition.info svg,
+.admonition-info svg {
+  color: #5b5fff !important;
+  fill: #5b5fff !important;
+}
+
+/* Info 文字颜色 - 和图标保持一致 */
+.info,
+.callout-info,
+.note-info,
+[data-callout="info"],
+.callout[data-callout="info"],
+.admonition.info,
+.admonition-info,
+.info p,
+.callout-info p,
+.note-info p,
+[data-callout="info"] p,
+.callout[data-callout="info"] p,
+.admonition.info p,
+.admonition-info p {
+  color: #5b5fff !important;
+}
+
+/* 通用的 Note 组件样式调整 */
+.note {
+  background-color: rgba(91, 95, 255, 0.06) !important;
+  border-color: rgba(91, 95, 255, 0.2) !important;
+  border-left-color: #5b5fff !important;
+}
+
+[data-theme="dark"] .note {
+  background-color: rgba(91, 95, 255, 0.1) !important;
+  border-color: rgba(91, 95, 255, 0.25) !important;
+  border-left-color: #7c7fff !important;
+}
+
+/* 强制覆盖所有蓝色背景 */
+*[style*="background-color: rgb(14 165 233"] {
+  background-color: rgba(91, 95, 255, 0.08) !important;
+}
+
+*[style*="background-color: rgba(14, 165, 233"] {
+  background-color: rgba(91, 95, 255, 0.08) !important;
+}
+
+/* 覆盖内联样式中的蓝色 */
+*[style*="rgb(14 165 233"] {
+  background-color: rgba(91, 95, 255, 0.08) !important;
+  border-color: rgba(91, 95, 255, 0.25) !important;
+}
+
+/* 最后的杀手锏 - 覆盖所有可能的蓝色组件 */
+div[class*="bg-sky"],
+div[class*="bg-blue"],
+.bg-sky-50,
+.bg-blue-50,
+.border-sky-200,
+.border-blue-200 {
+  background-color: rgba(91, 95, 255, 0.08) !important;
+  border-color: rgba(91, 95, 255, 0.25) !important;
+}
+
+/* 覆盖蓝色文字 - 和图标保持一致，但排除 Warning 组件 */
+*[class*="text-sky"]:not(.warning):not(.callout-warning):not([data-callout="warning"]),
+*[class*="text-blue"]:not(.warning):not(.callout-warning):not([data-callout="warning"]),
+.text-sky-600:not(.warning):not(.callout-warning):not([data-callout="warning"]),
+.text-blue-600:not(.warning):not(.callout-warning):not([data-callout="warning"]),
+.text-sky-700:not(.warning):not(.callout-warning):not([data-callout="warning"]),
+.text-blue-700:not(.warning):not(.callout-warning):not([data-callout="warning"]) {
+  color: #5b5fff !important;
+}
+
+/* 覆盖蓝色图标 */
+svg[class*="text-sky"],
+svg[class*="text-blue"],
+svg.text-sky-600,
+svg.text-blue-600,
+svg.text-sky-700,
+svg.text-blue-700 {
+  color: #5b5fff !important;
+  fill: #5b5fff !important;
+}
+
+/* 强制覆盖内联样式的颜色 */
+*[style*="color: rgb(14, 165, 233"],
+*[style*="color: rgb(14 165 233"],
+*[style*="fill: rgb(14, 165, 233"],
+*[style*="fill: rgb(14 165 233"] {
+  color: #5b5fff !important;
+  fill: #5b5fff !important;
+}
+
+/* 调整 Note 组件中加粗文字的颜色 */
+.note strong,
+.note b {
+  color: #7c7fff !important; /* 使用较浅的紫色 */
+}
+
+/* Warning 组件保持原来的颜色，不要改变！ */
+.warning,
+.callout-warning,
+[data-callout="warning"],
+.callout[data-callout="warning"],
+.admonition.warning,
+.admonition-warning {
+  /* 保持默认样式，不覆盖 */
+}
+
+.warning strong,
+.warning b,
+.callout-warning strong,
+.callout-warning b,
+[data-callout="warning"] strong,
+[data-callout="warning"] b {
+  /* 保持默认颜色，不覆盖 */
+}
+
+/* 调整 Info 组件中加粗文字的颜色 */
+.info strong,
+.info b,
+.callout-info strong,
+.callout-info b,
+[data-callout="info"] strong,
+[data-callout="info"] b {
+  color: #7c7fff !important; /* 使用较浅的紫色 */
+}

@@ -1,0 +1,136 @@
+---
+title: EdgeX 平台配置
+description: 'EdgeX 是一个专业的永续合约交易平台，支持多种数字资产的杠杆交易'
+icon: 'chart-line'
+---
+
+## 注册步骤
+
+<Steps>
+  <Step title="访问注册链接">
+    点击链接：https://pro.edgex.exchange/referral/ALPHALABS
+    
+    **邀请 ID**：`ALPHALABS`
+
+    <Note>
+      使用我们的邀请链接注册可以享受积分加成，全网最低磨损
+    </Note>
+  </Step>
+  
+  <Step title="进入交易面板">
+    点击右上角 **Launch app**，进入 EdgeX 交易面板
+    
+    首次进入可能需要等待几秒钟加载
+  </Step>
+  
+  <Step title="连接钱包">
+    1. 点击 **连接钱包** 按钮
+    2. 选择您使用的钱包类型（**推荐使用 Rabby**，也支持 MetaMask、WalletConnect 等）
+    3. 在钱包中确认连接授权
+
+    <Warning>
+      确保您的钱包已切换到正确的网络（Arbitrum）
+    </Warning>
+  </Step>
+  
+  <Step title="存款">
+    1. 点击 **Deposit** 进行存款
+    2. 选择存款币种：USDC
+    3. 选择网络：
+       - Arbitrum（推荐，手续费低）
+       - Ethereum
+       - BNB Chain
+    
+    **建议测试存款金额**：最少 100 USDC，后续按需进行存款
+  </Step>
+</Steps>
+
+## 平台特性
+
+<CardGroup cols={3}>
+  <Card title="支持网络" icon="network-wired">
+    - Arbitrum（主要）
+    - Ethereum
+    - BNB Chain
+  </Card>
+  <Card title="支持资产" icon="coins">
+    - USDC（主要保证金）
+    - 多种主流加密货币
+  </Card>
+  <Card title="推荐钱包" icon="wallet">
+    - **Rabby**（首选）
+    - MetaMask
+    - WalletConnect
+  </Card>
+</CardGroup>
+
+## 交易设置
+
+### 杠杆配置
+
+在开始量化交易前，需要在 EdgeX 前端设置正确的杠杆倍数：
+
+1. 进入交易界面
+2. 选择交易对（BTC-PERP 或 ETH-PERP）
+3. 设置杠杆倍数
+4. 确保与插件配置中的杠杆倍数一致
+
+<Warning>
+**重要提醒**：EdgeX 前端显示的杠杆倍数必须与插件配置中的杠杆倍数完全一致，否则可能导致交易异常。
+</Warning>
+
+### 风险管理
+
+| 设置项 | 建议值 | 说明 |
+|--------|--------|------|
+| 最大杠杆 | 10-50x | 根据风险承受能力调整 |
+| 止损设置 | 启用 | 建议设置合理的止损比例 |
+| 仓位限制 | 根据资金量 | 避免过度集中风险 |
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="为什么连接钱包失败？">
+    1. 检查钱包是否已解锁
+    2. 确认网络是否正确（Arbitrum）
+    3. 尝试刷新页面重新连接
+    4. 检查浏览器是否阻止了弹窗
+  </Accordion>
+  
+  <Accordion title="存款多久到账？">
+    - Arbitrum 网络：通常 1-5 分钟
+    - Ethereum 网络：10-30 分钟
+    - BNB Chain：5-15 分钟
+    
+    具体时间取决于网络拥堵情况
+  </Accordion>
+  
+  <Accordion title="如何查看交易历史？">
+    在 EdgeX 交易面板中：
+    1. 点击 "History" 或"历史"标签
+    2. 可以查看订单历史、交易记录等
+    3. 支持导出交易数据
+  </Accordion>
+</AccordionGroup>
+
+## 安全提醒
+
+<Warning>
+**安全注意事项**：
+- 妥善保管钱包私钥和助记词
+- 定期检查账户余额和交易记录
+- 如发现异常立即联系客服
+</Warning>
+
+## 下一步
+
+完成 EdgeX 平台配置后，您可以：
+
+<CardGroup cols={2}>
+  <Card title="配置 Variational" icon="arrow-right" href="/platforms/variational-setup">
+    继续配置 Variational 平台
+  </Card>
+  <Card title="安装插件" icon="download" href="/getting-started/installation">
+    开始安装交易插件
+  </Card>
+</CardGroup>
