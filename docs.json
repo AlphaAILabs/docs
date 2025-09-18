@@ -7,7 +7,7 @@
     "light": "#7c7fff",
     "dark": "#4040d9"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/favicon.svg",
   "modeToggle": {
     "default": "light",
     "isHidden": false
