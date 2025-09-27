@@ -268,3 +268,32 @@ svg.text-blue-700 {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Ensure consistent card heights for download cards */
+/* Target Mintlify CardGroup cards specifically */
+.card-group > div > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-group .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-group .card > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-group .card p {
+  flex: 1;
+}
+
+/* More specific targeting for download cards */
+[href*="github.com/AlphaAILabs"] {
+  margin-top: auto;
+}
