@@ -44,12 +44,36 @@
               "products/edgex-variational",
               "products/lighter-edgex"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "客户端",
+        "groups": [
           {
-            "group": "支持平台",
+            "group": "官方客户端",
             "pages": [
+              "clients/lighter-aster"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "支持平台",
+        "groups": [
+          {
+            "group": "平台配置",
+            "pages": [
+              "platforms/index",
               "platforms/edgex-setup",
               "platforms/variational-setup",
+              "platforms/lighter-setup",
+              "platforms/aster-setup"
+            ]
+          },
+          {
+            "group": "安全功能",
+            "pages": [
               "platforms/security-alerts"
             ]
           }

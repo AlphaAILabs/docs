@@ -1,0 +1,158 @@
+---
+title: Lighter-Aster 010
+description: 'AlphaLabs 官方客户端 - 支持 Windows 和 macOS'
+---
+
+<div className="client-hero">
+  <h1 className="client-title">Lighter-Aster 010</h1>
+  <p className="client-subtitle">AlphaLabs 官方客户端</p>
+  <div className="client-platforms">
+    <div className="platform-badge">Windows</div>
+    <div className="platform-badge">macOS</div>
+  </div>
+</div>
+
+## 客户端简介
+
+Lighter-Aster 010 是 AlphaLabs 的官方客户端应用，为用户提供统一的交易插件管理和监控界面。
+
+## 系统要求
+
+### Windows 系统
+- **操作系统**：Windows 10 或更高版本
+- **架构**：x64 (64位)
+- **内存**：至少 4GB RAM
+- **存储空间**：至少 500MB 可用空间
+
+### macOS 系统
+- **操作系统**：macOS 10.15 (Catalina) 或更高版本
+- **架构**：Intel x64 或 Apple Silicon (M1/M2)
+- **内存**：至少 4GB RAM
+- **存储空间**：至少 500MB 可用空间
+
+## 产品激活
+
+<Warning>
+**重要说明**：此版本为非公售版本，激活流程与其他产品不同
+</Warning>
+
+### 激活要求
+
+1. **申请激活码**：需通过 AlphaLabs 官方 Telegram 群组申请产品激活码
+2. **邀请码验证**：必须使用 AlphaLabs 提供的 Aster 平台邀请码完成注册
+3. **地址绑定**：向管理员 [@Cryptonymk](https://t.me/Cryptonymk) 或 [@quarticcat](https://t.me/quarticcat3) 提交 EOA 地址，获取专属激活码（激活码与 EOA 地址绑定，不可转移）
+
+<Note>
+**安全提醒**：如果从非 AlphaLabs 渠道获取该产品，有任何安全问题，AlphaLabs 不会对此承担任何责任
+</Note>
+
+## 核心优势：极致去同化
+
+Alpha Labs（Aster-Lighter版本）做到了极致的去同化，其中包括：
+
+- **支持8个币种**：映射出28种不同的组合数
+- **杠杆随机化**：每个用户设置杠杆不同，样本特征不同
+- **波动率**：不同的波动率平仓，样本特征无任何相似特征
+- **开单数量**：开单数量在区间内随机，每一笔都是不同的开单数量
+- **开单时间随机**：在时间区间内随机下单，每一笔下单时间也完全不同
+
+Alpha Labs做到了最大差异化，但是官方的女巫规则是一个黑盒。
+
+## 策略配置
+
+### 快速配置步骤
+
+1. **选择对冲币种** - 支持8个币种，28种策略组合
+   <img src="/images/s_010/001.png" alt="选择对冲币种" />
+
+2. **Lighter配置**
+   - 获取API Key和账户索引
+   - 填入Private Key和索引ID
+   <img src="/images/s_010/002.png" alt="Lighter 配置参数" />
+
+3. **Aster配置**
+   - 创建API密钥
+   - 填入API Key和Secret
+   <img src="/images/s_010/003.png" alt="Aster 配置参数" />
+
+4. **风险参数**
+   - 设置杠杆倍数（两平台需一致）
+   - 配置波动率和IM/MM
+   <img src="/images/s_010/004.png" alt="杠杆和风险参数" />
+
+5. **开仓区间**
+   - 设置最小/最大拆单数量
+   - 确保名义价值大致相同
+   <img src="/images/s_010/005.png" alt="开仓区间设置" />
+
+## 防女巫建议
+
+<Warning>
+**重要提醒**：虽然我们做到了最大差异化，但仍需注意以下建议
+</Warning>
+
+### 减少女巫风险的建议
+
+1. **币种轮换**：不要一直对冲同样两个币种，建议隔一段时间随机更换其他币种
+2. **手动交易**：自动运行一段时间策略之后，建议可以手动去做一点合约单
+3. **参数更新**：策略配置参数建议每隔一段时间更新一次（杠杆数、币种、平仓波动率）
+4. **使用静态住宅IP，使用静态住宅IP，使用静态住宅IP**（重要事情说三遍）
+
+### 已知的官方女巫规则
+
+- MM（做市策略）根据官方的DC发布过相关消息会被女巫
+
+## 安全警告
+
+<Warning>
+**运行环境要求**
+</Warning>
+
+1. **设备隔离**：客户端运行时，请保持和敏感设备隔离
+
+2. **定期检查**：此版本客户端并未添加告警机制，运行策略时，请定期检查仓位情况
+   - Aster和Lighter会因为内存机制，导致页面崩溃
+   - 防止出现意外情况
+
+3. **设备状态**：客户端运行情况下
+   - 设备不可以关机
+   - 设备不可以休眠
+
+## 下载安装
+
+<Note>
+  Lighter-Aster 010 客户端即将发布，敬请期待。
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Windows 版本" icon="windows">
+    **lighter-aster-010.exe**
+
+    适用于 Windows 10+ 系统
+
+    [下载 (.exe)](# "即将发布")
+  </Card>
+  <Card title="macOS 版本" icon="apple">
+    **lighter-aster-010.dmg**
+
+    适用于 macOS 10.15+ 系统
+
+    [下载 (.dmg)](# "即将发布")
+  </Card>
+</CardGroup>
+
+## 下一步
+
+安装完成后，请按照以下步骤开始使用：
+
+<CardGroup cols={3}>
+  <Card title="加入社群" icon="telegram" href="https://t.co/ZNnay6dnxz">
+    加入 AlphaLabs TG 群申请激活码
+  </Card>
+  <Card title="平台注册" icon="user-plus" href="/platforms/aster-setup">
+    使用 AlphaLabs 邀请码注册 Aster
+  </Card>
+  <Card title="配置Lighter" icon="bolt" href="/platforms/lighter-setup">
+    注册并配置 Lighter 平台
+  </Card>
+</CardGroup>
