@@ -65,7 +65,10 @@
               "platforms/lighter-setup",
               "platforms/aster-setup",
               "platforms/based-setup",
-              "platforms/backpack-setup"
+              "platforms/backpack-setup",
+              "platforms/extended-setup",
+              "platforms/ethereal-setup",
+              "platforms/hyperliquid-setup"
             ]
           },
           {

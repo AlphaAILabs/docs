@@ -1,17 +1,17 @@
 ---
-title: Based
-description: 'Based 平台的详细配置指南'
-icon: 'https://based.one/favicon.ico'
+title: Hyperliquid
+description: 'Hyperliquid 平台的详细配置指南'
+icon: 'https://hyperfoundation.org/landing/blob_green.gif'
 ---
 
 ## 注册步骤
 
 <Steps>
-  <Step title="访问 Based 平台">
-    点击链接：https://based.one
+  <Step title="访问 Hyperliquid 平台">
+    点击链接：https://app.hyperliquid.xyz
 
     <Note>
-      Based 是一个去中心化交易平台
+      Hyperliquid 是一个高性能的去中心化永续合约交易平台
     </Note>
   </Step>
 
@@ -21,14 +21,15 @@ icon: 'https://based.one/favicon.ico'
     3. 在钱包中确认连接授权
 
     <Warning>
-      确保您的钱包已切换到正确的网络（Base）
+      确保您的钱包已切换到 Arbitrum 网络
     </Warning>
   </Step>
 
   <Step title="存款">
     1. 点击 **Deposit** 进行存款
     2. 选择存款币种：USDC
-    3. 确认交易
+    3. 选择网络：Arbitrum
+    4. 确认交易
 
     <Note>
       **建议测试存款金额**：最少 100 USDC，后续按需进行存款
@@ -39,12 +40,15 @@ icon: 'https://based.one/favicon.ico'
 ## 平台特性
 
 <CardGroup cols={3}>
-  <Card title="支持网络" icon="network-wired">
-    - Base（主要网络）
+  <Card title="高性能交易" icon="gauge-high">
+    - 链上订单簿
+    - 极低延迟
+    - 高吞吐量
   </Card>
   <Card title="支持资产" icon="coins">
-    - USDC（主要保证金）
-    - 多种主流加密货币
+    - USDC（保证金）
+    - 多种永续合约
+    - 丰富的交易对
   </Card>
   <Card title="推荐钱包" icon="wallet">
     - **Rabby**（首选）
@@ -53,6 +57,29 @@ icon: 'https://based.one/favicon.ico'
   </Card>
 </CardGroup>
 
+## API 配置
+
+<Steps>
+  <Step title="生成 API Key">
+    1. 登录 Hyperliquid 账户
+    2. 前往 **Settings** > **API**
+    3. 点击 **Create API Key**
+    4. 设置 API 权限
+    5. 保存 **API Key** 和 **Secret**
+
+    <Warning>
+      API Secret 仅显示一次，请务必妥善保存
+    </Warning>
+  </Step>
+
+  <Step title="配置权限">
+    根据需要设置 API 权限：
+    - 交易权限
+    - 查看权限
+    - 提现权限（谨慎开启）
+  </Step>
+</Steps>
+
 ## 安全提醒
 
 <Warning>
@@ -60,11 +87,13 @@ icon: 'https://based.one/favicon.ico'
 - 妥善保管钱包私钥和助记词
 - 定期检查账户余额和交易记录
 - 如发现异常立即联系客服
+- 仅使用官方链接访问平台
+- 建议启用双因素认证
 </Warning>
 
 ## 下一步
 
-完成 Based 平台配置后，您可以：
+完成 Hyperliquid 平台配置后，您可以：
 
 <CardGroup cols={2}>
   <Card title="安装插件" icon="download" href="/getting-started/installation">

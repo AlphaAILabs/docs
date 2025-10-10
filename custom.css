@@ -298,6 +298,12 @@ svg.text-blue-700 {
   margin-top: auto;
 }
 
+/* Add vertical spacing between card rows */
+.card-group {
+  row-gap: 2rem !important;
+  gap: 1.5rem !important;
+}
+
 /* Fix transparent favicon icons with subtle gradient background */
 [href*="platforms/edgex-setup"] img,
 [href*="platforms/variational-setup"] img,
@@ -305,12 +311,18 @@ svg.text-blue-700 {
 [href*="platforms/aster-setup"] img,
 [href*="platforms/based-setup"] img,
 [href*="platforms/backpack-setup"] img,
+[href*="platforms/extended-setup"] img,
+[href*="platforms/ethereal-setup"] img,
+[href*="platforms/hyperliquid-setup"] img,
 .nav-icon img[src*="favicon"],
 .sidebar-icon img[src*="favicon"],
 img[src*="edgex.exchange/favicon"],
 img[src*="lighter.xyz/favicon"],
 img[src*="based.one/favicon"],
 img[src*="backpack.exchange/favicon"],
+img[src*="extended.exchange"],
+img[src*="ethereal.trade"],
+img[src*="hyperfoundation.org"],
 img[src*="asterdex.com"],
 img[src*="website-files.com"] {
   background: linear-gradient(135deg, rgba(91, 95, 255, 0.1) 0%, rgba(124, 127, 255, 0.15) 100%) !important;
@@ -326,10 +338,16 @@ img[src*="website-files.com"] {
 [data-theme="dark"] [href*="platforms/aster-setup"] img,
 [data-theme="dark"] [href*="platforms/based-setup"] img,
 [data-theme="dark"] [href*="platforms/backpack-setup"] img,
+[data-theme="dark"] [href*="platforms/extended-setup"] img,
+[data-theme="dark"] [href*="platforms/ethereal-setup"] img,
+[data-theme="dark"] [href*="platforms/hyperliquid-setup"] img,
 [data-theme="dark"] img[src*="edgex.exchange/favicon"],
 [data-theme="dark"] img[src*="lighter.xyz/favicon"],
 [data-theme="dark"] img[src*="based.one/favicon"],
 [data-theme="dark"] img[src*="backpack.exchange/favicon"],
+[data-theme="dark"] img[src*="extended.exchange"],
+[data-theme="dark"] img[src*="ethereal.trade"],
+[data-theme="dark"] img[src*="hyperfoundation.org"],
 [data-theme="dark"] img[src*="asterdex.com"],
 [data-theme="dark"] img[src*="website-files.com"] {
   background: linear-gradient(135deg, rgba(91, 95, 255, 0.15) 0%, rgba(124, 127, 255, 0.2) 100%) !important;
