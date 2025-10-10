@@ -39,10 +39,20 @@
         "tab": "产品",
         "groups": [
           {
+            "group": "产品总览",
+            "pages": [
+              "products/index"
+            ]
+          },
+          {
             "group": "交易插件",
             "pages": [
               "products/edgex-variational",
-              "products/lighter-edgex"
+              "products/lighter-edgex",
+              "products/lighter-based",
+              "products/vip-004",
+              "products/lighter-backpack",
+              "products/vip-006"
             ]
           },
           {
