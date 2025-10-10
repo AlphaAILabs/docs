@@ -1,0 +1,116 @@
+---
+title: Backpack 配置
+description: 'Backpack 平台的详细配置指南'
+icon: 'https://backpack.exchange/favicon-32x32.png'
+---
+
+## 注册步骤
+
+<Steps>
+  <Step title="访问 Backpack 平台">
+    点击链接：https://backpack.exchange
+
+    <Note>
+      Backpack 是一个集成式加密货币交易平台
+    </Note>
+  </Step>
+
+  <Step title="创建账户">
+    1. 点击 **Sign Up** 注册按钮
+    2. 输入邮箱地址
+    3. 设置安全密码
+    4. 完成邮箱验证
+  </Step>
+
+  <Step title="完成 KYC 验证">
+    1. 登录账户后，前往账户设置
+    2. 根据要求提交身份验证文件
+    3. 等待审核通过（通常 1-2 个工作日）
+
+    <Warning>
+      部分功能需要完成 KYC 验证才能使用
+    </Warning>
+  </Step>
+
+  <Step title="存款">
+    1. 点击 **Deposit** 进行存款
+    2. 选择存款币种
+    3. 选择存款网络
+    4. 完成转账
+
+    <Note>
+      **建议测试存款金额**：最少 100 USDC，后续按需进行存款
+    </Note>
+  </Step>
+</Steps>
+
+## API 配置
+
+<Steps>
+  <Step title="创建 API Key">
+    1. 登录 Backpack 账户
+    2. 前往 **Settings** > **API Keys**
+    3. 点击 **Create New API Key**
+    4. 设置 API 权限（根据需要选择交易权限）
+    5. 保存 **API Key** 和 **Secret Key**
+
+    <Warning>
+      API Secret 仅显示一次，请务必妥善保存
+    </Warning>
+  </Step>
+
+  <Step title="配置 IP 白名单">
+    为了提高安全性，建议配置 IP 白名单：
+
+    1. 在 API 设置中添加可信 IP 地址
+    2. 保存设置
+
+    <Note>
+      配置 IP 白名单可以防止 API Key 被盗用
+    </Note>
+  </Step>
+</Steps>
+
+## 平台特性
+
+<CardGroup cols={3}>
+  <Card title="交易类型" icon="chart-line">
+    - 现货交易
+    - 期货交易
+    - 杠杆交易
+  </Card>
+  <Card title="支持资产" icon="coins">
+    - USDC、USDT
+    - 多种主流加密货币
+    - 多样化交易对
+  </Card>
+  <Card title="安全特性" icon="shield">
+    - 双因素认证
+    - IP 白名单
+    - 提现白名单
+  </Card>
+</CardGroup>
+
+## 安全提醒
+
+<Warning>
+**安全注意事项**：
+- 启用双因素认证（2FA）
+- 妥善保管 API Key 和 Secret
+- 定期更换密码
+- 设置提现地址白名单
+- 定期检查账户活动记录
+</Warning>
+
+## 下一步
+
+完成 Backpack 平台配置后，您可以：
+
+<CardGroup cols={2}>
+  <Card title="安装插件" icon="download" href="/getting-started/installation">
+    开始安装交易插件
+  </Card>
+  <Card title="查看其他平台" icon="list" href="/platforms/index">
+    配置其他交易平台
+  </Card>
+</CardGroup>

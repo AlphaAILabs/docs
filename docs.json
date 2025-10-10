@@ -36,7 +36,7 @@
         ]
       },
       {
-        "tab": "插件",
+        "tab": "产品",
         "groups": [
           {
             "group": "交易插件",
@@ -44,16 +44,11 @@
               "products/edgex-variational",
               "products/lighter-edgex"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "客户端",
-        "groups": [
+          },
           {
             "group": "官方客户端",
             "pages": [
-              "clients/lighter-aster"
+              "products/lighter-aster"
             ]
           }
         ]
@@ -68,7 +63,9 @@
               "platforms/edgex-setup",
               "platforms/variational-setup",
               "platforms/lighter-setup",
-              "platforms/aster-setup"
+              "platforms/aster-setup",
+              "platforms/based-setup",
+              "platforms/backpack-setup"
             ]
           },
           {

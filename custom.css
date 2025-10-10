@@ -297,3 +297,43 @@ svg.text-blue-700 {
 [href*="github.com/AlphaAILabs"] {
   margin-top: auto;
 }
+
+/* Fix transparent favicon icons with subtle gradient background */
+[href*="platforms/edgex-setup"] img,
+[href*="platforms/variational-setup"] img,
+[href*="platforms/lighter-setup"] img,
+[href*="platforms/aster-setup"] img,
+[href*="platforms/based-setup"] img,
+[href*="platforms/backpack-setup"] img,
+.nav-icon img[src*="favicon"],
+.sidebar-icon img[src*="favicon"],
+img[src*="edgex.exchange/favicon"],
+img[src*="lighter.xyz/favicon"],
+img[src*="based.one/favicon"],
+img[src*="backpack.exchange/favicon"],
+img[src*="asterdex.com"],
+img[src*="website-files.com"] {
+  background: linear-gradient(135deg, rgba(91, 95, 255, 0.1) 0%, rgba(124, 127, 255, 0.15) 100%) !important;
+  border-radius: 6px !important;
+  padding: 3px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark mode - slightly stronger gradient */
+[data-theme="dark"] [href*="platforms/edgex-setup"] img,
+[data-theme="dark"] [href*="platforms/variational-setup"] img,
+[data-theme="dark"] [href*="platforms/lighter-setup"] img,
+[data-theme="dark"] [href*="platforms/aster-setup"] img,
+[data-theme="dark"] [href*="platforms/based-setup"] img,
+[data-theme="dark"] [href*="platforms/backpack-setup"] img,
+[data-theme="dark"] img[src*="edgex.exchange/favicon"],
+[data-theme="dark"] img[src*="lighter.xyz/favicon"],
+[data-theme="dark"] img[src*="based.one/favicon"],
+[data-theme="dark"] img[src*="backpack.exchange/favicon"],
+[data-theme="dark"] img[src*="asterdex.com"],
+[data-theme="dark"] img[src*="website-files.com"] {
+  background: linear-gradient(135deg, rgba(91, 95, 255, 0.15) 0%, rgba(124, 127, 255, 0.2) 100%) !important;
+  border-radius: 6px !important;
+  padding: 3px !important;
+  box-shadow: 0 2px 6px rgba(91, 95, 255, 0.2) !important;
+}
