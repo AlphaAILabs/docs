@@ -80,80 +80,102 @@ EdgeX-Variational 是 AlphaLabs 的旗舰交易插件，专为追求极致性能
 **重要提醒**：EdgeX 和 Variational 两个平台必须使用**同一个 EOA 钱包地址**进行操作。
 </Warning>
 
-## 插件安装
+## 使用指南
+
+### 1. 下载策略程序
 
 <Steps>
-  <Step title="下载插件">
-    下载 [001] EdgeX-Variational 插件：
-
-    **下载链接**：[Perps Extension Variational EdgeX.zip](https://github.com/AlphaAILabs/perp-plugin-strategy-001/blob/main/perps-extension-variational-edgex-001.zip)
-
-    **文件名**：`Perps Extension Variational EdgeX.zip`
-
-    将安装包解压到桌面或其他便于访问的位置
-
-    <img src="/images/s_001/001.png" alt="下载量化工具，将安装包解压到桌面" />
+  <Step title="下载压缩包">
+    下载策略程序压缩包：[下载地址待补充]
   </Step>
-  <Step title="安装到 Chrome">
-    1. 打开 Chrome 浏览器
-    2. 访问 `chrome://extensions/`
-    3. 右上角开启 **开发者模式**
-    4. 点击 **加载已解压的扩展程序**
-    5. 选择解压后的插件文件夹
-    6. 确认安装完成
 
-    <img src="/images/s_001/002.png" alt="打开Chrome扩展程序，点击管理扩展程序，右上角打开开发者模式，点击加载插件，加载解压后的文件夹" />
+  <Step title="解压缩">
+    解压下载的压缩包文件
+
+    <img src="/images/s_001/001.png" alt="解压缩文件" />
+  </Step>
+
+  <Step title="加载扩展程序">
+    通过谷歌浏览器 → 扩展程序 → 管理扩展程序，加载刚刚解压缩的文件夹
+
+    <img src="/images/s_001/002.png" alt="管理扩展程序" />
+    <img src="/images/s_001/003.png" alt="加载已解压的扩展程序" />
+  </Step>
+
+  <Step title="检查加载状态">
+    检查 001 策略已经正常加载
+
+    <img src="/images/s_001/004.png" alt="检查加载状态" />
   </Step>
 </Steps>
 
-## 参数配置
+### 2. 配置 AlphaLabs 官网账号
+
+要使用 AlphaLabs 的策略程序，需提前配置好官网账号：
 
 <Steps>
-  <Step title="打开插件配置">
-    点击打开插件，点击策略参数配置
+  <Step title="连接钱包">
+    在官网链接钱包（此钱包不需要是需要跑策略的钱包）
   </Step>
-  <Step title="配置参数">
-    按照以下建议配置各项参数：
 
-    | 参数 | 默认值 | 建议值 | 说明 |
-    |:----:|:------:|:------:|:----:|
-    | 最大保证金（MM） | 0.5 | 不调整 | 保持默认 |
-    | 最大初始保证金（IM） | 0.8 | 不调整 | 保持默认 |
-    | 平台间最大价差 BTC | 100 | 100-150 | 自行调整 |
-    | 平台间最大价差 ETH | 5 | 10-15 | 自行调整 |
-    | 最小平仓价差 BTC | 500 | 500-1000 | 自行调整 |
-    | 最小平仓价差 ETH | 15 | 15-30 | 自行调整 |
-    | 最小开仓数量 BTC | 0.002 | 不调整 | 保持默认 |
-    | 最小开仓数量 ETH | 0.05 | 不调整 | 保持默认 |
-    | 杠杆倍数 BTC | 20 | 10-50 | 需与前端一致 |
-    | 杠杆倍数 ETH | 20 | 10-50 | 需与前端一致 |
-    | Gain | -130 | 实时调整 | 参考 TG 群组公布数值 |
+  <Step title="创建账户">
+    点击"创建账户"，然后按照要求激活策略（请认真填写自己的信息，如果不正确则无法使用策略）
 
-    <img src="/images/s_001/003.png" alt="Gain 参数配置" />
+    访问：[https://alphalabs.app/products/activation](https://alphalabs.app/products/activation)
+  </Step>
+
+  <Step title="等待审核">
+    AlphaLabs 的后台收到信息后，会有专门的 dev 进行审核处理，审核通过则可以使用策略
+  </Step>
+</Steps>
+
+### 3. 使用程序策略
+
+<Steps>
+  <Step title="登录插件">
+    打开插件，按照激活设置的各项参数登录插件
+
+    <img src="/images/s_001/005.png" alt="登录插件" />
+  </Step>
+
+  <Step title="配置 API Key">
+    接下来我们需要先配置好 API KEY
+
+    参考以下教程获取并填写 API Key：
+    - [EdgeX 配置教程](/platforms/edgex-setup#api-配置)
+    - [Variational 配置教程](/platforms/variational-setup#api-配置)
+
+    <img src="/images/s_001/006.png" alt="配置 API Key" />
+
+    填写完成后点击"保存密钥"
+  </Step>
+
+  <Step title="配置策略参数">
+    配置参数分为 5 个模块（IM 和 MM 不要调整）：
+
+    **① 最大价差**：平台间的最大 BTC 价差
+
+    **② 平仓价差**：达到平仓价差才可执行平仓
+    - 设置的小则开平仓频率会变高
+    - 设置的大则开平仓频率会变低
+
+    **③ 开仓数量**：单次开仓的最小数量
+
+    **④ 杠杆倍数**：选择两个币种的杠杆倍数
 
     <Warning>
-      **重要提醒**：
-      - 脚本杠杆倍数要和 EdgeX 和 Variational 前端展示杠杆倍数一致
-      - Gain 数值请参考 Alpha Labs Telegram 群组每天公布的数值，实时调整
+      **重要**：两个平台对应币种前端网页的杠杆倍数必须要和这里面设置的保持一样
     </Warning>
+
+    **⑤ Gain 数值**：参考插件展示的 log 数值，无需频繁调整，波动过大时再进行调整
+
+    <img src="/images/s_001/007.png" alt="配置策略参数" />
+
+    全部设置完成后，点击"保存设置"
   </Step>
-</Steps>
 
-## 启动和运行
-
-<Steps>
   <Step title="启动策略">
-    点击启动策略执行
-  </Step>
-  <Step title="处理 EdgeX 连接问题">
-    点击启动策略执行，会出现错误提示：**EdgeX 未连接，请先登录**；刷新 EdgeX 网页，多次进行尝试
-
-    <img src="/images/s_001/004.png" alt="EdgeX 未连接错误提示" />
-  </Step>
-  <Step title="处理 Variational 连接问题">
-    点击启动策略执行，会出现错误提示：**Variational 未连接，请先登录**；刷新 Variational 网页，多次进行尝试
-
-    <img src="/images/s_001/005.png" alt="Variational 未连接错误提示" />
+    点击主页面上的"启动策略"，然后观察策略运行情况即可
   </Step>
 </Steps>
 

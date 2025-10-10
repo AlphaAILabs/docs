@@ -17,7 +17,7 @@ description: '双策略协同交易插件 - Lighter 与 Backpack 平台'
 [005] Lighter-Backpack 是 AlphaLabs 推出的交易插件，结合 Lighter 和 Backpack 双平台策略协同技术。
 
 <Info>
-  **当前状态**: 🔧 开发中
+  **当前状态**: 即将发布
 
   **主要特性**: 双策略协同，结合 CEX 与 DEX 优势
 </Info>
@@ -38,6 +38,113 @@ description: '双策略协同交易插件 - Lighter 与 Backpack 平台'
     波动率阈值控制，灵活调整开平仓频率
   </Card>
 </CardGroup>
+
+## 使用指南
+
+### 1. 下载策略程序
+
+<Steps>
+  <Step title="下载压缩包">
+    下载策略程序压缩包：[下载地址待补充]
+  </Step>
+
+  <Step title="解压缩">
+    解压下载的压缩包文件
+
+    <img src="/images/s_005/001.png" alt="解压缩文件" />
+  </Step>
+
+  <Step title="加载扩展程序">
+    通过谷歌浏览器 → 扩展程序 → 管理扩展程序，加载刚刚解压缩的文件夹
+
+    <img src="/images/s_005/002.png" alt="管理扩展程序" />
+    <img src="/images/s_005/003.png" alt="加载已解压的扩展程序" />
+  </Step>
+
+  <Step title="检查加载状态">
+    检查 005 策略已经正常加载
+
+    <img src="/images/s_005/004.png" alt="检查加载状态" />
+  </Step>
+</Steps>
+
+### 2. 配置 AlphaLabs 官网账号
+
+要使用 AlphaLabs 的策略程序，需提前配置好官网账号：
+
+<Steps>
+  <Step title="连接钱包">
+    在官网链接钱包（此钱包不需要是需要跑策略的钱包）
+  </Step>
+
+  <Step title="创建账户">
+    点击"创建账户"，然后按照要求激活策略（请认真填写自己的信息，如果不正确则无法使用策略）
+
+    访问：[https://alphalabs.app/products/activation](https://alphalabs.app/products/activation)
+  </Step>
+
+  <Step title="等待审核">
+    AlphaLabs 的后台收到信息后，会有专门的 dev 进行审核处理，审核通过则可以使用策略
+  </Step>
+</Steps>
+
+### 3. 使用程序策略
+
+<Steps>
+  <Step title="登录插件">
+    打开插件，按照激活设置的各项参数登录插件
+
+    <img src="/images/s_005/005.png" alt="登录插件" />
+  </Step>
+
+  <Step title="配置 API Key">
+    参考以下教程获取并填写 API Key：
+    - [Lighter API 配置教程](/platforms/lighter-setup#api-配置)
+    - [Backpack API 配置教程](/platforms/backpack-setup#api-配置)
+
+    <img src="/images/s_005/006.png" alt="配置 API Key" />
+
+    填写完成后点击"保存密钥"
+  </Step>
+
+  <Step title="配置策略参数">
+    配置参数分为 5 个模块：
+
+    **① 币种选择**：选择您需要开合约的币种，两两为一对
+
+    **② 杠杆设置**：选择两个币种的杠杆倍数
+
+    <Warning>
+      **重要**：两个平台对应币种前端网页的杠杆倍数必须要和这里面设置的保持一样
+    </Warning>
+
+    **③ 波动率阈值**：设定当对应币种相对于开仓价格波动多少则进行平仓
+    - 波动值设置的小则开平仓频率会变高
+    - 设置的大则开平仓频率会变低
+
+    **④ Lighter 平台开仓 Size**：设定 Lighter 平台对应币种单个开仓的数额范围，系统会根据设定在范围内随机数额开单，保证开仓位的随机性
+
+    **⑤ 随机时间区间**：设置下单之后暂停多少秒再进行下一单的操作，增加时间上的随机性
+
+    <img src="/images/s_005/007.png" alt="配置策略参数" />
+
+    全部设置完成后，点击"保存设置"
+  </Step>
+
+  <Step title="启动策略">
+    点击主页面上的"启动策略"，然后观察策略运行情况即可
+  </Step>
+</Steps>
+
+## 重要注意事项
+
+<Warning>
+  **运行环境要求**：
+  - 运行量化工具的电脑：**不可以休眠，不可以关机**
+  - 要保持插件在前端：**不可以关闭，否则 Chrome 会杀死量化工具的程序**
+  - 尽量选用**日本、新加坡**等地的**静态住宅 IP**
+  - 禁止**同 IP 服务器**开启同一个 Perp 的多主账户对冲
+</Warning>
 
 ## 其他可用产品
 
