@@ -1,26 +1,130 @@
 ---
 title: Lighter-Based [003]
-description: '双策略协同交易插件 - Lighter 与 Based 平台'
+description: '双策略协同交易插件 - 超低磨损率 0.02% - 0.023%'
 ---
 
 <div className="product-hero">
   <h1 className="hero-title">Lighter-Based [003]</h1>
   <p className="hero-subtitle">Lighter 与 Based 双策略协同</p>
-  <div className="hero-date">
-    <div className="date-box">敬请期待</div>
-    <div className="date-label">即将推出</div>
-  </div>
 </div>
 
 ## 产品简介
 
-Lighter-Based [003] 是 AlphaLabs 推出的交易插件，结合 Lighter 和 Based 双平台策略协同技术。
+Lighter-Based [003] 是 AlphaLabs 推出的交易插件，结合 Lighter 和 Based 双平台策略协同技术，实现超低磨损率和稳定收益。
 
-<Info>
-  **当前状态**: 🔧 开发中
+<Warning>
+  **安全提醒**: 由于 Based 采用 Hyperliquid 原生平台，受 Hyperliquid 限制，要运行该策略需要用到钱包私钥，介意勿用
+</Warning>
 
-  **主要特性**: 双策略协同，专注 Hyperliquid 生态
-</Info>
+## 使用指南
+
+### 1. 下载策略程序
+
+<Steps>
+  <Step title="下载压缩包">
+    下载策略程序压缩包：[下载地址待补充]
+  </Step>
+
+  <Step title="解压缩">
+    解压下载的压缩包文件
+
+    <img src="/images/s_003/001.png" alt="解压缩文件" />
+  </Step>
+
+  <Step title="加载扩展程序">
+    通过谷歌浏览器 → 扩展程序 → 管理扩展程序，加载刚刚解压缩的文件夹
+
+    <img src="/images/s_003/002.png" alt="打开扩展程序管理" />
+
+    <img src="/images/s_003/003.png" alt="加载扩展程序" />
+  </Step>
+
+  <Step title="检查加载状态">
+    检查 003 策略已经正常加载
+
+    <img src="/images/s_003/004.png" alt="检查策略加载" />
+  </Step>
+</Steps>
+
+### 2. 配置 Alpha Labs 官网账号
+
+要使用 Alpha Labs 的策略程序，需提前配置好官网账号
+
+<Steps>
+  <Step title="连接钱包">
+    在官网链接钱包（此钱包不需要是需要跑策略的钱包）
+  </Step>
+
+  <Step title="创建账户">
+    点击"创建账户"，然后按照要求激活策略（请认真填写自己的信息，如果不正确则无法使用策略）
+
+    访问：https://alphalabs.app/products/activation
+  </Step>
+
+  <Step title="等待审核">
+    Alpha Labs 的后台收到信息后，会有专门的 dev 进行审核处理，审核通过则可以使用策略
+  </Step>
+</Steps>
+
+### 3. 使用策略程序
+
+<Steps>
+  <Step title="登录插件">
+    打开插件，按照激活设置的各项参数登录插件
+
+    <img src="/images/s_003/005.png" alt="登录插件" />
+  </Step>
+
+  <Step title="配置 API Key">
+    接下来我们需要先配置好 API KEY
+
+    <img src="/images/s_003/006.png" alt="API 配置入口" />
+
+    参考以下教程获取并填写 API Key：
+    - [Lighter API 配置教程](/platforms/lighter-setup#api-配置)
+    - Based 私钥
+
+    填写完成后点击"保存密钥"
+
+    <img src="/images/s_003/007.png" alt="保存 API 密钥" />
+
+    <Warning>
+      Based 需要填写钱包私钥，请确保您了解相关风险
+    </Warning>
+  </Step>
+
+  <Step title="配置策略参数">
+    配置参数分为 5 个模块：
+
+    **① 币种选择**：选择您需要开合约的币种，两两为一对
+
+    **② 杠杆设置**：选择两个币种的杠杆倍数
+
+    <Warning>
+      两个平台对应币种前端网页的杠杆倍数必须要和这里面设置的保持一样
+    </Warning>
+
+    **③ 波动率阈值**：设定当对应币种相对于开仓价格波动多少则进行平仓
+    - 波动值设置的小则开平仓频率会变高
+    - 设置的大则开平仓频率会变低
+
+    **④ Lighter 平台开仓 Size**：设定 Lighter 平台对应币种单个开仓的数额范围，系统会根据设定在范围内随机数额开单，保证开仓位的随机性
+
+    **⑤ 随机时间区间**：设置下单之后暂停多少秒再进行下一单的操作，增加时间上的随机性
+
+    <img src="/images/s_003/008.png" alt="策略参数配置" />
+
+    全部设置完成后，点击"保存设置"
+
+    <img src="/images/s_003/009.png" alt="保存设置" />
+  </Step>
+
+  <Step title="启动策略">
+    点击主页面上的"启动策略"，然后观察策略运行情况即可
+
+    <img src="/images/s_003/010.png" alt="启动策略" />
+  </Step>
+</Steps>
 
 ## 产品特性
 

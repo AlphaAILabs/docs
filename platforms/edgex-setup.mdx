@@ -53,6 +53,50 @@ icon: 'https://pro.edgex.exchange/favicon.ico'
   </Step>
 </Steps>
 
+## API 配置
+
+<Steps>
+  <Step title="登录 EdgeX 平台">
+    访问并登录 EdgeX 平台
+  </Step>
+
+  <Step title="打开开发者工具">
+    通过 F12 打开浏览器开发者工具面板
+
+    <img src="/images/edgex/004.png" alt="EdgeX 打开开发者工具" />
+  </Step>
+
+  <Step title="进入 Application 面板">
+    点击 **Application**，找到 **Local Storage** 里面的 **pro.edgex**，然后在右侧找到 **user**
+
+    <img src="/images/edgex/005.png" alt="EdgeX Application 面板" />
+  </Step>
+
+  <Step title="获取 API 密钥">
+    在 user 的具体数据下，通过 **state/keys** 找到 apiKey 和 l2key
+
+    按照图示的方式复制好以下 4 个参数：
+    - apikey-apikey
+    - apikey-passphrase
+    - apikey-secret
+    - l2key-privateKey
+
+    <img src="/images/edgex/006.png" alt="EdgeX 获取 API 密钥" />
+
+    <Warning>
+      这些密钥非常重要，请务必妥善保存
+    </Warning>
+  </Step>
+
+  <Step title="获取 Account ID">
+    在 **state/currentActiveAccount** 里面找到 **accountId**
+
+    <img src="/images/edgex/007.png" alt="EdgeX 获取 Account ID" />
+
+    记录这 5 个参数，在策略的 API 配置中按照要求输入
+  </Step>
+</Steps>
+
 ## 平台特性
 
 <CardGroup cols={3}>
