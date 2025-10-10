@@ -1,56 +1,97 @@
 ---
 title: 安装指南
-description: '快速安装 AlphaLabs 交易插件'
+description: '快速安装 AlphaLabs 交易插件和客户端'
 ---
 
 ## 系统要求
 
-<Info>
-  **浏览器**: Chrome 90+
-  **网络**: 稳定的互联网连接
-</Info>
+<CardGroup cols={2}>
+  <Card title="浏览器插件" icon="puzzle-piece">
+    - **浏览器**: Chrome 90+ 或 Edge 90+
+    - **网络**: 稳定的互联网连接
+    - **系统**: Windows / macOS / Linux
+  </Card>
+  <Card title="客户端程序" icon="desktop">
+    - **系统**: Windows 10+ / macOS 11+
+    - **网络**: 稳定的互联网连接
+    - **硬盘**: 至少 100MB 可用空间
+  </Card>
+</CardGroup>
 
-## 安装步骤
+## 选择安装方式
 
-目前插件通过 GitHub 发布，请按照以下步骤安装：
+根据您选择的产品类型，安装方式有所不同：
 
-<Steps>
-  <Step title="下载插件">
-    从 GitHub 下载对应的插件文件：
-    - [EdgeX-Variational [001]](/products/edgex-variational) - 支持 EdgeX 和 Variational 平台
-    - [Lighter-EdgeX [002]](/products/lighter-edgex) - 即将推出
-  </Step>
+<Tabs>
+  <Tab title="浏览器插件">
+    适用产品：001, 002, 003, 005
 
-  <Step title="解压文件">
-    将下载的 zip 文件解压到桌面或其他便于访问的位置
-  </Step>
+    <Steps>
+      <Step title="获取插件">
+        访问对应产品页面获取下载链接：
+        - [EdgeX-Variational [001]](/products/edgex-variational)
+        - [Lighter-EdgeX [002]](/products/lighter-edgex)
+        - [Lighter-Based [003]](/products/lighter-based)
+        - [Lighter-Backpack [005]](/products/lighter-backpack)
+      </Step>
 
-  <Step title="安装到 Chrome">
-    1. 打开 Chrome 浏览器，访问 `chrome://extensions/`
-    2. 右上角开启 **开发者模式**
-    3. 点击 **加载已解压的扩展程序**
-    4. 选择解压后的插件文件夹
-    5. 确认安装完成
-  </Step>
-</Steps>
+      <Step title="解压文件">
+        将下载的 zip 文件解压到便于访问的位置
+      </Step>
+
+      <Step title="安装扩展">
+        1. 打开 Chrome 浏览器，访问 `chrome://extensions/`
+        2. 右上角开启 **开发者模式**
+        3. 点击 **加载已解压的扩展程序**
+        4. 选择解压后的插件文件夹
+        5. 确认安装完成
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="客户端程序">
+    适用产品：010
+
+    <Steps>
+      <Step title="获取客户端">
+        访问产品页面获取下载链接：
+        - [Lighter-Aster [010]](/products/lighter-aster)
+      </Step>
+
+      <Step title="安装程序">
+        1. 下载对应系统的安装包
+        2. 运行安装程序
+        3. 按照安装向导完成安装
+      </Step>
+
+      <Step title="启动程序">
+        安装完成后，启动客户端程序
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
 
 ## 使用前准备
 
-安装完成后，您需要：
+安装完成后，按照以下步骤配置：
 
 <Steps>
+  <Step title="选择策略">
+    从 [产品总览](/products/index) 了解不同策略的特点和磨损率
+  </Step>
+
   <Step title="激活产品">
-    使用邀请码激活插件，详见 [产品激活](/getting-started/activation)
+    使用邀请码（免费）或月费订阅（168 美元/月）激活，详见 [产品激活](/getting-started/activation)
   </Step>
 
   <Step title="配置平台">
-    配置交易平台账户：
-    - [EdgeX 平台配置](/platforms/edgex-setup)
-    - [Variational 平台配置](/platforms/variational-setup)
+    根据选择的策略配置对应的交易平台：
+    - 查看 [支持平台](/platforms/index) 列表
+    - 配置交易所账号和 API 密钥
   </Step>
 
-  <Step title="设置安全警告">
-    配置饭碗告警系统，详见 [安全警告配置](/platforms/security-alerts)
+  <Step title="设置安全告警">
+    配置饭碗告警系统保护资产，详见 [安全警告配置](/platforms/security-alerts)
   </Step>
 </Steps>
 
@@ -75,13 +116,13 @@ description: '快速安装 AlphaLabs 交易插件'
 ## 下一步
 
 <CardGroup cols={3}>
-  <Card title="激活产品" icon="key" href="/getting-started/activation">
-    使用邀请码激活您的交易插件
+  <Card title="产品总览" icon="list" href="/products/index">
+    查看所有策略产品对比
   </Card>
-  <Card title="平台配置" icon="gear" href="/platforms/edgex-setup">
-    配置 EdgeX 和 Variational 平台
+  <Card title="产品激活" icon="key" href="/getting-started/activation">
+    邀请码免费或月费订阅
   </Card>
-  <Card title="常见问题" icon="circle-question" href="/faq">
-    查看使用过程中的常见问题
+  <Card title="支持平台" icon="layer-group" href="/platforms/index">
+    配置交易平台和 API
   </Card>
 </CardGroup>
