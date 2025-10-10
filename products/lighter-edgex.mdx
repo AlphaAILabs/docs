@@ -1,47 +1,142 @@
 ---
 title: Lighter-EdgeX [002]
-description: '即将推出 - 双策略协同，超低磨损率'
+description: '双策略协同交易插件 - 超低磨损率 0.023%'
 ---
-
-<div className="product-hero">
-  <h1 className="hero-title">Lighter-EdgeX [002]</h1>
-  <p className="hero-subtitle">新一代双策略协同交易插件</p>
-  <div className="hero-date">
-    <div className="date-box">2025.9.24</div>
-    <div className="date-label">预计发布</div>
-  </div>
-</div>
 
 ## 产品简介
 
-Lighter-EdgeX [002] 是 AlphaLabs 即将推出的新一代交易插件，将结合双策略协同技术，实现更低的磨损率和更稳定的收益。
+Lighter-EdgeX [002] 是 AlphaLabs 推出的新一代交易插件，结合双策略协同技术，实现超低磨损率和稳定收益。
 
-<Info>
-  **当前状态**: 🔧 开发中
-  **预计上线**: 2025.9.24
-  **主要特性**: 双策略协同，超低磨损率 0.018%
-</Info>
+## 使用指南
 
-## 预期特性
+### 1. 下载策略程序
+
+<Steps>
+  <Step title="下载压缩包">
+    下载策略程序压缩包：[下载地址待补充]
+  </Step>
+
+  <Step title="解压缩">
+    解压下载的压缩包文件
+
+    <img src="/images/s_002/001.png" alt="解压缩文件" />
+  </Step>
+
+  <Step title="加载扩展程序">
+    通过谷歌浏览器 → 扩展程序 → 管理扩展程序，加载刚刚解压缩的文件夹
+
+    <img src="/images/s_002/002.png" alt="打开扩展程序管理" />
+
+    <img src="/images/s_002/003.png" alt="加载扩展程序" />
+  </Step>
+
+  <Step title="检查加载状态">
+    检查 002 策略已经正常加载
+
+    <img src="/images/s_002/004.png" alt="检查策略加载" />
+  </Step>
+</Steps>
+
+### 2. 配置 Alpha Labs 官网账号
+
+要使用 Alpha Labs 的策略程序，需提前配置好官网账号
+
+<Steps>
+  <Step title="连接钱包">
+    在官网链接钱包（此钱包不需要是需要跑策略的钱包）
+  </Step>
+
+  <Step title="创建账户">
+    点击"创建账户"，然后按照要求激活策略（请认真填写自己的信息，如果不正确则无法使用策略）
+
+    访问：https://alphalabs.app/products/activation
+  </Step>
+
+  <Step title="等待审核">
+    Alpha Labs 的后台收到信息后，会有专门的 dev 进行审核处理，审核通过则可以使用策略
+  </Step>
+</Steps>
+
+### 3. 使用策略程序
+
+<Steps>
+  <Step title="登录插件">
+    打开插件，按照激活设置的各项参数登录插件
+
+    <img src="/images/s_002/005.png" alt="登录插件" />
+  </Step>
+
+  <Step title="配置 API Key">
+    接下来我们需要先配置好 API KEY
+
+    <img src="/images/s_002/006.png" alt="API 配置入口" />
+
+    参考以下教程获取并填写 API Key：
+    - [Lighter API 配置教程](/platforms/lighter-setup#api-配置)
+    - EdgeX API 配置教程（待补充）
+
+    填写完成后点击"保存密钥"
+
+    <img src="/images/s_002/007.png" alt="保存 API 密钥" />
+  </Step>
+
+  <Step title="配置策略参数">
+    点击设置，然后根据需求调整参数
+
+    <img src="/images/s_002/008.png" alt="策略参数配置" />
+
+    配置参数分为 5 个模块：
+
+    **① 币种选择**：选择您需要开合约的币种，两两为一对
+
+    **② 杠杆设置**：选择两个币种的杠杆倍数
+
+    <Warning>
+      两个平台对应币种前端网页的杠杆倍数必须要和这里面设置的保持一样
+    </Warning>
+
+    **③ 波动率阈值**：设定当对应币种相对于开仓价格波动多少则进行平仓
+    - 波动值设置的小则开平仓频率会变高
+    - 设置的大则开平仓频率会变低
+
+    **④ Lighter 平台开仓 Size**：设定 Lighter 平台对应币种单个开仓的数额范围，系统会根据设定在范围内随机数额开单，保证开仓位的随机性
+
+    **⑤ 随机时间区间**：设置下单之后暂停多少秒再进行下一单的操作，增加时间上的随机性
+
+    <img src="/images/s_002/009.png" alt="参数设置详情 1" />
+
+    <img src="/images/s_002/010.png" alt="参数设置详情 2" />
+
+    全部设置完成后，点击"保存设置"
+
+    <img src="/images/s_002/011.png" alt="保存设置" />
+  </Step>
+
+  <Step title="启动策略">
+    点击主页面上的"启动策略"，然后观察策略运行情况即可
+
+    <img src="/images/s_002/012.png" alt="启动策略" />
+  </Step>
+</Steps>
+
+## 产品特性
 
 <CardGroup cols={2}>
   <Card title="双策略协同" icon="merge">
-    结合 EdgeX 和 Variational 策略优势
+    结合 Lighter 和 EdgeX 策略优势
   </Card>
   <Card title="超低磨损率" icon="chart-line-down">
-    预期磨损率：0.018%
+    磨损率：0.023%
   </Card>
-  <Card title="智能切换" icon="brain">
-    自动适应不同市场环境
+  <Card title="智能随机" icon="brain">
+    随机数额和时间间隔，增加策略随机性
   </Card>
   <Card title="风险控制" icon="shield">
-    双重风险验证机制
+    波动率阈值控制，灵活调整开平仓频率
   </Card>
 </CardGroup>
 
-## 目前可用产品
-
-在 Lighter-EdgeX [002] 推出之前，您可以使用我们当前的旗舰产品：
+## 其他产品
 
 <Card title="EdgeX-Variational [001]" icon="rocket" href="/products/edgex-variational">
   **立即可用** - 支持 EdgeX 和 Variational 平台
@@ -50,13 +145,11 @@ Lighter-EdgeX [002] 是 AlphaLabs 即将推出的新一代交易插件，将结�
   - 邀请码激活或按量付费
 </Card>
 
-## 获取更新
-
-想要第一时间了解 Lighter-EdgeX [002] 的最新进展？
+## 获取支持
 
 <CardGroup cols={2}>
   <Card title="Telegram 群组" icon="users" href="https://t.co/ZNnay6dnxz">
-    加入社区获取开发进展
+    加入社区获取技术支持
   </Card>
   <Card title="X (Twitter)" icon="x-twitter" href="https://x.com/Alpha_alabs">
     关注官方账号获取更新
