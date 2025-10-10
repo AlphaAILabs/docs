@@ -69,12 +69,28 @@ icon: 'https://backpack.exchange/favicon-32x32.png'
 ## API 配置
 
 <Steps>
+  <Step title="登录账户">
+    登录已注册的 Backpack 账户（未注册用户需通过 https://backpack.exchange/join/tezsnno5 注册）
+
+    <img src="/images/backpack/009.png" alt="Backpack 登录" />
+  </Step>
+
+  <Step title="进入 API 设置">
+    点击右上角账户总览，点击设置，点击 **API Keys**，点击新建 API Keys
+
+    <img src="/images/backpack/010.png" alt="Backpack API 设置" />
+  </Step>
+
   <Step title="创建 API Key">
-    1. 登录 Backpack 账户
-    2. 前往 **Settings** > **API Keys**
-    3. 点击 **Create New API Key**
-    4. 设置 API 权限（根据需要选择交易权限）
-    5. 保存 **API Key** 和 **Secret Key**
+    输入名称后，点击创建
+
+    <img src="/images/backpack/011.png" alt="Backpack 创建 API Key" />
+  </Step>
+
+  <Step title="保存密钥">
+    复制保存 **API Key** 以及 **API Secret**
+
+    <img src="/images/backpack/012.png" alt="Backpack 保存密钥" />
 
     <Warning>
       API Secret 仅显示一次，请务必妥善保存
@@ -82,10 +98,9 @@ icon: 'https://backpack.exchange/favicon-32x32.png'
   </Step>
 
   <Step title="配置 IP 白名单">
-    为了提高安全性，建议配置 IP 白名单：
+    设置 IP 限制，点击输入对应的 IP 地址
 
-    1. 在 API 设置中添加可信 IP 地址
-    2. 保存设置
+    <img src="/images/backpack/013.png" alt="Backpack IP 白名单" />
 
     <Note>
       配置 IP 白名单可以防止 API Key 被盗用
