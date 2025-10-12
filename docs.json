@@ -58,7 +58,8 @@
           {
             "group": "官方客户端",
             "pages": [
-              "products/lighter-aster"
+              "products/lighter-aster",
+              "products/signer-manager"
             ]
           }
         ]

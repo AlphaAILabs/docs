@@ -1,0 +1,113 @@
+---
+title: 'AlphaLabs Signer Manager'
+description: '本地签名服务管理器 - 安全、高性能的订单签名解决方案'
+---
+
+## 产品概述
+
+AlphaLabs Signer Manager 是本地签名服务管理器，提供安全、高性能的订单签名能力，配备现代化的图形化管理界面。
+
+| 属性 | 信息 |
+|------|------|
+| **产品状态** | 已上线 |
+| **支持平台** | macOS (Apple Silicon / Intel) / Windows (x64) |
+| **GitHub** | https://github.com/AlphaAILabs/signer-manager |
+
+## 核心特性
+
+<CardGroup cols={2}>
+  <Card title="极致安全" icon="shield">
+    - 私钥本地存储，签名完全离线
+    - 无需上传私钥到服务器
+  </Card>
+  <Card title="高性能" icon="bolt">
+    - 2,000+ 次/秒签名性能
+    - 毫秒级响应速度
+  </Card>
+  <Card title="多策略支持" icon="puzzle-piece">
+    - 兼容多个 AlphaLabs 策略
+    - 持续扩展支持更多平台
+  </Card>
+  <Card title="现代化界面" icon="desktop">
+    - 图形化管理界面
+    - 深色/浅色主题
+  </Card>
+</CardGroup>
+
+## 系统要求
+
+<CardGroup cols={2}>
+  <Card title="macOS" icon="apple">
+    macOS 10.15+ / Apple Silicon 或 Intel
+  </Card>
+  <Card title="Windows" icon="windows">
+    Windows 10+ / x64
+  </Card>
+</CardGroup>
+
+## 快速开始
+
+<Steps>
+  <Step title="下载安装">
+    从 [GitHub Releases](https://github.com/AlphaAILabs/signer-manager/releases) 下载对应系统的安装包并安装
+  </Step>
+
+  <Step title="启动应用">
+    打开 AlphaLabs Signer
+  </Step>
+
+  <Step title="启动服务">
+    点击"启动服务"，等待初始化完成
+
+    <img src="/images/signer-manager/001.png" alt="启动 Signer 服务" />
+  </Step>
+
+  <Step title="配置策略">
+    在对应策略中配置服务地址：`http://localhost:10000`
+
+    <img src="/images/signer-manager/002.png" alt="配置服务地址" />
+  </Step>
+</Steps>
+
+<Note>
+  可在设置中修改服务端口，修改后需同步更新策略配置
+</Note>
+
+## 适用策略
+
+目前支持以下策略（持续扩展中）：
+
+<CardGroup cols={3}>
+  <Card title="[002] Lighter-EdgeX" icon="rocket" href="/products/lighter-edgex">
+    EdgeX + Lighter 双平台策略
+  </Card>
+
+  <Card title="[003] Lighter-Based" icon="rocket" href="/products/lighter-based">
+    Lighter + Based 双平台策略
+  </Card>
+
+  <Card title="[005] Lighter-Backpack" icon="rocket" href="/products/lighter-backpack">
+    Lighter + Backpack 双平台策略
+  </Card>
+</CardGroup>
+
+## 重要提醒
+
+<Warning>
+  - 私钥仅存储在本地设备，请妥善保管并定期备份
+  - 运行 Signer Manager 的电脑**不可休眠、不可关机**
+  - 确保服务端口（默认 10000）未被占用
+  - 不建议在公共或不受信任的设备上运行
+</Warning>
+
+## 获取支持
+
+<CardGroup cols={2}>
+  <Card title="GitHub" icon="github" href="https://github.com/AlphaAILabs/signer-manager">
+    查看源代码和最新版本
+  </Card>
+
+  <Card title="Telegram 群组" icon="users" href="https://t.co/ZNnay6dnxz">
+    加入社区获取技术支持
+  </Card>
+</CardGroup>
