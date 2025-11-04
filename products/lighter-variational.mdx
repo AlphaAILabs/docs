@@ -1,0 +1,165 @@
+---
+title: '[014] Lighter-Variational'
+description: '复合型策略 - 0风险敞口，超高积分获取效率'
+---
+
+## 产品简介
+
+[014] Lighter-Variational 是 AlphaLabs 推出的复合型策略，专注于市场确定性强的 Variational 和 Lighter 平台，追求极高的积分获取效率、完全符合真实的行为交易策略，获取超高的收益回报。
+
+<CardGroup cols={3}>
+  <Card title="0风险敞口" icon="shield-check">
+    完全对冲，无风险暴露
+  </Card>
+  <Card title="业界最低磨损" icon="chart-line-down">
+    支持多币种交易
+  </Card>
+  <Card title="超高积分效率" icon="rocket">
+    优化的积分获取策略
+  </Card>
+</CardGroup>
+
+## 使用指南
+
+<div style={{padding: '16px', borderLeft: '4px solid #ef4444', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '4px', marginBottom: '16px'}}>
+  <span style={{color: '#ef4444', fontWeight: 'bold'}}>⚠️ 使用前准备：</span>本策略需要配合 <a href="/products/signer-manager">Signer Manager</a> 使用，请先下载并启动 Signer Manager 服务后再进行以下配置。
+</div>
+
+### 1. 下载策略程序
+
+<Steps>
+  <Step title="下载压缩包">
+    下载策略程序压缩包：https://github.com/AlphaAILabs/perp-plugin-strategy-014/releases/tag/v0.0.1
+  </Step>
+
+  <Step title="解压缩">
+    解压下载的压缩包文件
+  </Step>
+
+  <Step title="加载扩展程序">
+    通过谷歌浏览器 → 打开开发者模式 → 扩展程序 → 管理扩展程序，加载刚刚解压缩的文件夹
+  </Step>
+
+  <Step title="检查加载状态">
+    检查 014 策略已经正常加载
+
+    <img src="/images/s_014/001.png" alt="检查策略加载" />
+  </Step>
+</Steps>
+
+### 2. 配置 Alpha Labs 官网账号
+
+要使用 Alpha Labs 的策略程序，需提前配置好官网账号
+
+<Steps>
+  <Step title="连接钱包">
+    在官网链接钱包（此钱包不需要是需要跑策略的钱包）
+  </Step>
+
+  <Step title="创建账户">
+    点击"创建账户"，然后按照要求激活策略（请认真填写自己的信息，如果不正确则无法使用策略）
+
+    访问：https://alphalabs.app/products/activation
+  </Step>
+
+  <Step title="等待审核">
+    Alpha Labs 的后台收到信息后，会有专门的 dev 进行审核处理，审核通过则可以使用策略
+  </Step>
+</Steps>
+
+### 3. 使用策略程序
+
+<Steps>
+  <Step title="登录插件">
+    打开插件，按照激活设置的各项参数登录插件
+
+    <img src="/images/s_014/002.png" alt="登录插件" />
+  </Step>
+
+  <Step title="配置 API Key">
+    接下来我们需要先配置好 API KEY
+
+    <img src="/images/s_014/003.png" alt="API 配置入口" />
+
+    参考以下教程获取并填写 API Key：
+    - [Variational API 配置教程](/platforms/variational-setup#api-配置)
+    - [Lighter API 配置教程](/platforms/lighter-setup#api-配置)
+
+    填写完成后点击"保存密钥"
+
+    <img src="/images/s_014/004.png" alt="保存 API 密钥" />
+  </Step>
+
+  <Step title="配置策略参数">
+    配置参数分为 7 个模块：
+
+    **① 币种选择**：选择您需要开合约的币种，两两为一对
+
+    **② 杠杆设置**：选择两个币种的杠杆倍数
+
+    <Warning>
+      两个平台对应币种前端网页的杠杆倍数必须要和这里面设置的保持一样
+    </Warning>
+
+    **③ 波动率阈值**：设定当对应币种相对于开仓价格波动多少则进行平仓
+    - 波动值设置的小则开平仓频率会变高
+    - 设置的大则开平仓频率会变低
+
+    **④ Lighter 和 Variational 开仓 Size**：设定对应币种单个开仓的数额范围，系统会根据设定在范围内随机数额开单，保证开仓数量的随机性
+
+    **⑤ 随机时间区间**：设置下单之后暂停多少秒再进行下一单的操作，增加时间上的随机性
+
+    **⑥ Variational 平仓 PNL 区间**：针对 Variational 与 Lighter 的点差套利设置，设置 Variational 的盈利区间
+
+    **⑦ 滑点设置**：如果选择交易小币种则需要将点差设置到 0.02%——0.03%
+
+    <img src="/images/s_014/005.png" alt="策略参数配置" />
+
+    全部设置完成后，点击"保存设置"
+
+    <img src="/images/s_014/006.png" alt="保存设置" />
+  </Step>
+
+  <Step title="启动策略">
+    点击主页面上的"启动策略"，然后观察策略运行情况即可
+
+    <img src="/images/s_014/007.png" alt="启动策略" />
+  </Step>
+</Steps>
+
+## 产品特性
+
+<CardGroup cols={2}>
+  <Card title="复合型策略" icon="layer-group">
+    专注市场确定性强的平台组合
+  </Card>
+  <Card title="0风险敞口" icon="shield-halved">
+    完全对冲，无风险暴露
+  </Card>
+  <Card title="业界最低磨损" icon="chart-line-down">
+    支持多币种，磨损率极低
+  </Card>
+  <Card title="超高积分效率" icon="star">
+    优化的积分获取策略，超高收益回报
+  </Card>
+</CardGroup>
+
+## 重要注意事项
+
+<Warning>
+  **运行环境要求**：
+  - 运行量化工具的电脑：**不可以休眠，不可以关机**
+  - 尽量选用**日本、新加坡**等地的**静态住宅 IP**
+  - 禁止**同 IP 服务器**开启同一个 Perp 的多主账户对冲
+</Warning>
+
+## 获取支持
+
+<CardGroup cols={2}>
+  <Card title="Telegram 群组" icon="users" href="https://t.co/ZNnay6dnxz">
+    加入社区获取技术支持
+  </Card>
+  <Card title="X (Twitter)" icon="x-twitter" href="https://x.com/Alpha_alabs">
+    关注官方账号获取更新
+  </Card>
+</CardGroup>
