@@ -61,11 +61,13 @@ description: '双策略协同交易插件 - Backpack 与 Variational 平台'
   </Step>
 
   <Step title="加载扩展程序">
-    通过谷歌浏览器 → 扩展程序 → 管理扩展程序，加载刚刚解压缩的文件夹
+    通过谷歌浏览器 → 打开开发者模式 → 扩展程序 → 管理扩展程序，加载刚刚解压缩的文件夹
   </Step>
 
   <Step title="检查加载状态">
     检查 013 策略已经正常加载
+
+    <img src="/images/s_013/001.png" alt="检查加载状态" />
   </Step>
 </Steps>
 
@@ -94,18 +96,26 @@ description: '双策略协同交易插件 - Backpack 与 Variational 平台'
 <Steps>
   <Step title="登录插件">
     打开插件，按照激活设置的各项参数登录插件
+
+    <img src="/images/s_013/002.png" alt="登录插件" />
   </Step>
 
   <Step title="配置 API Key">
     参考以下教程获取并填写 API Key：
-    - [Backpack API 配置教程](/platforms/backpack-setup#api-配置)
     - [Variational API 配置教程](/platforms/variational-setup#api-配置)
+    - [Backpack API 配置教程](/platforms/backpack-setup#api-配置)
+
+    <img src="/images/s_013/003.png" alt="配置 API Key" />
 
     填写完成后点击"保存密钥"
+
+    <img src="/images/s_013/004.png" alt="保存密钥" />
   </Step>
 
   <Step title="配置策略参数">
-    配置参数分为多个模块：
+    配置参数分为 7 个模块：
+
+    <img src="/images/s_013/005.png" alt="配置策略参数" />
 
     **① 币种选择**：选择您需要开合约的币种，两两为一对
 
@@ -119,15 +129,21 @@ description: '双策略协同交易插件 - Backpack 与 Variational 平台'
     - 波动值设置的小则开平仓频率会变高
     - 设置的大则开平仓频率会变低
 
-    **④ 开仓 Size**：设定对应币种单个开仓的数额范围，系统会根据设定在范围内随机数额开单，保证开仓数量的随机性
+    **④ Backpack 和 Variational 开仓 Size**：设定对应币种单个开仓的数额范围，系统会根据设定在范围内随机数额开单，保证开仓数量的随机性
 
     **⑤ 随机时间区间**：设置下单之后暂停多少秒再进行下一单的操作，增加时间上的随机性
+
+    **⑥ Variational 平仓 PNL 区间**：针对 Variational 与 Backpack 的点差套利设置，设置 Variational 的盈利区间
+
+    **⑦ 滑点设置**：如果选择交易小币种则需要将点差设置到 0.02%—0.03%
 
     全部设置完成后，点击"保存设置"
   </Step>
 
   <Step title="启动策略">
     点击主页面上的"启动策略"，然后观察策略运行情况即可
+
+    <img src="/images/s_013/006.png" alt="启动策略" />
   </Step>
 </Steps>
 
