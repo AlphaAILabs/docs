@@ -35,7 +35,124 @@ Variational Turbo 是 AlphaLabs 推出的**网页版**复合型策略，专注�
   - 如果使用云服务器，我们测试通过并且推荐：https://www.vultr.com/?ref=9019099
 </Warning>
 
-## 部署指南
+## 使用指南
+
+<Steps>
+  <Step title="注册 AlphaLabs 账户">
+    打开 [https://alphalabs.app/products/activation](https://alphalabs.app/products/activation)，连接钱包（此钱包不需要是跑策略的钱包）
+  </Step>
+
+  <Step title="绑定邀请码">
+    点击绑定邀请码：**AlphaLabs_2025**，点击创建账户，并设置密码
+
+    <Frame>
+      <img src="/images/s_019/001.png" alt="绑定邀请码" />
+    </Frame>
+  </Step>
+
+  <Step title="注册 Variational 平台账户">
+    通过 AlphaLabs 的邀请码注册 Variational 平台：[omni.variational.io?ref=OMNIAXUBQ1IU](https://omni.variational.io/?ref=OMNIAXUBQ1IU)
+
+    <Danger>
+      **重要**：需要两个 Variational 平台账户才可运行该策略，均需要通过 AlphaLabs 邀请链接注册
+    </Danger>
+
+    <Frame>
+      <img src="/images/s_019/002.png" alt="注册 Variational" />
+    </Frame>
+  </Step>
+
+  <Step title="登录策略平台">
+    点击进入：[https://varvar.strategy.alphalabs.app](https://varvar.strategy.alphalabs.app/)
+
+    输入地址及登录密码，进行登录
+
+    <Frame>
+      <img src="/images/s_019/003.png" alt="登录策略平台" />
+    </Frame>
+  </Step>
+
+  <Step title="创建策略组合">
+    点击 "+"，创建策略组合
+
+    <Frame>
+      <img src="/images/s_019/004.png" alt="创建策略组合" />
+    </Frame>
+  </Step>
+
+  <Step title="选择对冲账户">
+    选择需要对冲的主、辅账户地址
+
+    <Frame>
+      <img src="/images/s_019/005.png" alt="选择对冲账户" />
+    </Frame>
+  </Step>
+
+  <Step title="配置 API Key">
+    参考以下教程获取并填写 API Key：[Variational 平台配置](/platforms/variational-setup)
+
+    <Frame>
+      <img src="/images/s_019/006.png" alt="配置 API Key" />
+    </Frame>
+  </Step>
+
+  <Step title="配置服务器地址">
+    填入配置好的两个服务器地址，点击服务器地址栏后的测试。最后点击创建账户组
+
+    <Frame>
+      <img src="/images/s_019/007.png" alt="配置服务器地址" />
+    </Frame>
+  </Step>
+
+  <Step title="编辑策略配置">
+    点击编辑配置，开始编辑参数
+
+    <Frame>
+      <img src="/images/s_019/008.png" alt="编辑策略配置" />
+    </Frame>
+  </Step>
+
+  <Step title="配置交易币种">
+    点亮代表你想要运行该币种，并配置对应的 size 区间，点击 ❕ 会展示推荐参数
+
+    <Frame>
+      <img src="/images/s_019/009.png" alt="配置交易币种" />
+    </Frame>
+  </Step>
+
+  <Step title="配置策略参数">
+    余下共设置十个参数，图中可视（点击对应的 ❕，会展示其含义），完成后点击保存配置
+
+    <Frame>
+      <img src="/images/s_019/010.png" alt="配置策略参数" />
+    </Frame>
+
+    **参数说明**：
+
+    | 参数 | 说明 |
+    |------|------|
+    | 循环间隔最小值 (秒) | 第一次策略执行与第二次策略执行循环之间的最小等待时间 |
+    | 循环间隔最大值 (秒) | 第一次策略执行与第二次策略执行循环之间的最大等待时间，实际等待时间在最小和最大值之间随机 |
+    | 监控超时 (秒) | 订单成交监控的超时时间，超时后将取消未成交订单 |
+    | 吃单滑点 | 市价单允许的最大滑点比例（如极端行情建议数值：0.001） |
+    | 代币数量最小值 | 每轮策略持有的最小代币种类数量 |
+    | 代币数量最大值 | 每轮策略持有的最多代币种类数量，实际数量在最小和最大值之间随机 |
+    | 最小持仓时间最小值 (分钟) | 开仓后至少持有多久才能平仓的最小值 |
+    | 最小持仓时间最大值 (分钟) | 开仓后至少持有多久才能平仓的最大值，实际时间在最小和最大值之间随机 |
+    | 最大持仓时间 (分钟) | 持仓超过此时间后强制平仓，防止长期持仓带来的风险累积 |
+    | 目标平仓盈亏 ($) | 平仓时要求的最小盈亏金额，只有达到此盈利才会触发平仓 |
+  </Step>
+
+  <Step title="启动策略">
+    点击启动策略，即可运行
+
+    <Frame>
+      <img src="/images/s_019/011.png" alt="启动策略" />
+    </Frame>
+  </Step>
+</Steps>
+
+## 后端服务部署
 
 ### 1. 登录服务器并下载程序
 
