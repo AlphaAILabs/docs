@@ -35,14 +35,14 @@ description: '官方网页版策略 - 0风险敞口，超高交易量效率'
 ssh user@your-server
 
 # 下载程序（以 Linux x64 为例）
-wget https://github.com/AlphaAILabs/variational-turbo/releases/download/v1.0.0/variational-turbo-linux-amd64
+wget https://github.com/AlphaAILabs/variational-api-service/releases/download/v1.0.0/variational-service-linux-amd64
 
 # 添加执行权限
-chmod +x variational-turbo-linux-amd64
+chmod +x variational-service-linux-amd64
 ```
 
 <Info>
-  其他版本下载地址：https://github.com/AlphaAILabs/variational-turbo/releases
+  其他版本下载地址：https://github.com/AlphaAILabs/variational-api-service/releases
 </Info>
 
 ### 2. 使用 tmux 启动
@@ -52,7 +52,7 @@ chmod +x variational-turbo-linux-amd64
 tmux new -s turbo
 
 # 启动程序
-./variational-turbo-linux-amd64
+./variational-service-linux-amd64
 
 # 按 Ctrl+B 然后按 D 分离会话（程序继续后台运行）
 ```
@@ -71,7 +71,7 @@ tmux new -s turbo
 
 ```
 your-domain.com {
-    reverse_proxy localhost:8080
+    reverse_proxy localhost:3000
 }
 ```
 
@@ -79,7 +79,7 @@ your-domain.com {
 
 ```
 https://YOUR_SERVER_IP:443 {
-    reverse_proxy localhost:8080
+    reverse_proxy localhost:3000
     tls internal
 }
 ```
@@ -106,7 +106,7 @@ sudo firewall-cmd --reload
 ```
 
 <Warning>
-  如果使用云服务器（如阿里云、腾讯云、AWS 等），还需要在**云控制台的安全组**中放行 80 和 443 端口。
+  如果使用云服务器，我们测试通过并且推荐 https://www.vultr.com/?ref=9019099
 </Warning>
 
 <Warning>
