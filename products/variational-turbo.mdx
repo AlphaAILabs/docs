@@ -5,7 +5,15 @@ description: '官方网页版策略 - 0风险敞口，超高交易量效率'
 
 ## 产品简介
 
-[019] Variational Turbo 是 AlphaLabs 推出的**网页版**复合型策略，专注于 Variational 平台，通过双账户对冲实现0风险敞口，追求极高的积分获取效率和超高收益回报。
+Variational Turbo 是 AlphaLabs 推出的**网页版**复合型策略，专注于 Variational 平台，通过双账户对冲实现0风险敞口，追求极高的交易量获取效率。
+
+<Warning>
+  **注册 Variational 账号**：请使用以下链接注册 Variational 账号，需要注册**两个不同的策略地址**（用于主账户和对冲账户）：
+
+  https://omni.variational.io?ref=OMNIAXUBQ1IU
+
+  **重要**：注册时使用的**官方地址必须是同一个**，然后创建多个策略地址。否则无法正常拉取账户数据。
+</Warning>
 
 <CardGroup cols={3}>
   <Card title="0风险敞口" icon="shield-check">
@@ -24,6 +32,7 @@ description: '官方网页版策略 - 0风险敞口，超高交易量效率'
   - 需要一台 **7x24 小时**运行的服务器
   - 推荐使用 **日本、新加坡** 等地的服务器
   - 禁止**同 IP**开启同一个账户的多组策略。为了系统运行稳定，建议**一个账户地址对应一个独立 IP**
+  - 如果使用云服务器，我们测试通过并且推荐：https://www.vultr.com/?ref=9019099
 </Warning>
 
 ## 部署指南
@@ -65,9 +74,11 @@ tmux new -s turbo
 
 ### 3. 配置 Caddy 反向代理
 
-编辑 `/etc/caddy/Caddyfile`：
+vim `/etc/caddy/Caddyfile`：
 
-**使用域名（自动 HTTPS）：**
+**方式一：使用域名（推荐）**
+
+如果您有域名，Caddy 会自动申请 Let's Encrypt 免费证书，浏览器访问时显示安全连接：
 
 ```
 your-domain.com {
@@ -75,7 +86,9 @@ your-domain.com {
 }
 ```
 
-**使用 IP（自签名证书）：**
+**方式二：使用 IP（自签名证书）**
+
+如果没有域名，可以使用 IP 直接访问。由于 IP 地址无法申请正规 SSL 证书，Caddy 会使用自签名证书：
 
 ```
 https://YOUR_SERVER_IP:443 {
@@ -85,6 +98,12 @@ https://YOUR_SERVER_IP:443 {
 ```
 
 将 `YOUR_SERVER_IP` 替换为您的服务器公网 IP。
+
+<Info>
+  **关于证书的说明**：
+  - **域名访问**：Caddy 自动申请 Let's Encrypt 证书，浏览器显示"安全"
+  - **IP 访问**：使用自签名证书，浏览器会显示"不安全"警告，但数据传输仍然是加密的，点击"继续访问"即可正常使用
+</Info>
 
 重启 Caddy：
 
@@ -104,10 +123,6 @@ sudo firewall-cmd --permanent --add-port=80/tcp
 sudo firewall-cmd --permanent --add-port=443/tcp
 sudo firewall-cmd --reload
 ```
-
-<Warning>
-  如果使用云服务器，我们测试通过并且推荐 https://www.vultr.com/?ref=9019099
-</Warning>
 
 <Warning>
   使用自签名证书时，浏览器会显示安全警告，点击"高级" → "继续访问"即可。Chrome 也可以直接输入 `thisisunsafe` 跳过。
