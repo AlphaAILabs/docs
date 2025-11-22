@@ -154,110 +154,194 @@ Variational Turbo 是 AlphaLabs 推出的**网页版**复合型策略，专注�
 
 ## 后端服务部署
 
-### 1. 登录服务器并下载程序
+<Danger>
+  经过测试，阿里云和腾讯云的 IP 都不行，因此请务必选用 Vultr 服务商：[https://www.vultr.com/?ref=9019099](https://www.vultr.com/?ref=9019099)
+</Danger>
+
+### 1. 注册 Vultr
+
+<Frame>
+  <img src="/images/vultr/001.png" alt="注册 Vultr" />
+</Frame>
+
+### 2. 设置服务启动脚本
+<Frame>
+  <img src="/images/vultr/003.png" alt="选择 Startup Script" />
+</Frame>
+
+点击 `Add Startup Script`
+
+<Frame>
+  <img src="/images/vultr/004.png" alt="添加启动脚本" />
+</Frame>
+
+<Frame>
+  <img src="/images/vultr/005.png" alt="填写脚本" />
+</Frame>
+
+比如使用名称 `variational-service-api`，下面的脚本直接复制填写：
 
 ```bash
-# 登录服务器
-ssh user@your-server
+#!/bin/bash
+set -e
 
-# 下载程序（以 Linux x64 为例）
-wget https://github.com/AlphaAILabs/variational-api-service/releases/download/v1.0.0/variational-service-linux-amd64
+echo "=== Starting Variational Service Deployment ==="
 
-# 添加执行权限
-chmod +x variational-service-linux-amd64
-```
+# Install dependencies
+apt-get update
+apt-get install -y caddy ufw
 
-<Info>
-  其他版本下载地址：https://github.com/AlphaAILabs/variational-api-service/releases
-</Info>
+# Download service
+mkdir -p /opt/variational
+cd /opt/variational
+curl -L -o variational-service https://github.com/AlphaAILabs/variational-api-service/releases/download/v1.0.0/variational-service-linux-amd64
+chmod +x variational-service
 
-### 2. 使用 tmux 启动
+# Create systemd service
+cat > /etc/systemd/system/variational.service << 'EOF'
+[Unit]
+Description=Variational API Service
+After=network.target
 
-```bash
-# 创建 tmux 会话
-tmux new -s turbo
+[Service]
+Type=simple
+WorkingDirectory=/opt/variational
+ExecStart=/opt/variational/variational-service
+Restart=always
 
-# 启动程序
-./variational-service-linux-amd64
+[Install]
+WantedBy=multi-user.target
+EOF
 
-# 按 Ctrl+B 然后按 D 分离会话（程序继续后台运行）
-```
+systemctl daemon-reload
+systemctl enable variational
+systemctl start variational
 
-<Tip>
-  **tmux 常用命令**：
-  - `tmux attach -t turbo` - 重新连接会话
-  - `tmux kill-session -t turbo` - 终止会话
-</Tip>
+# Configure firewall
+ufw --force enable
+ufw allow 22
+ufw allow 80
+ufw allow 443
 
-### 3. 配置 Caddy 反向代理
+# Get server IP and configure Caddy
 
-vim `/etc/caddy/Caddyfile`：
+SERVER_IP=$(ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v '127.0.0.1' | head -1)
 
-**方式一：使用域名（推荐）**
-
-如果您有域名，Caddy 会自动申请 Let's Encrypt 免费证书，浏览器访问时显示安全连接：
-
-```
-your-domain.com {
-    reverse_proxy localhost:3000
-}
-```
-
-**方式二：使用 IP（自签名证书）**
-
-如果没有域名，可以使用 IP 直接访问。由于 IP 地址无法申请正规 SSL 证书，Caddy 会使用自签名证书：
-
-```
-https://YOUR_SERVER_IP:443 {
+cat > /etc/caddy/Caddyfile << EOF
+$SERVER_IP {
     reverse_proxy localhost:3000
     tls internal
 }
+EOF
+
+systemctl restart caddy
+
+echo "=== Deployment Complete ==="
+echo "Access service at: https://$SERVER_IP"
 ```
 
-将 `YOUR_SERVER_IP` 替换为您的服务器公网 IP。
+### 3. 选定云服务器
 
-<Info>
-  **关于证书的说明**：
-  - **域名访问**：Caddy 自动申请 Let's Encrypt 证书，浏览器显示"安全"
-  - **IP 访问**：使用自签名证书，浏览器会显示"不安全"警告，但数据传输仍然是加密的，点击"继续访问"即可正常使用
-</Info>
+<Frame>
+  <img src="/images/vultr/006.png" alt="选择服务器" />
+</Frame>
 
-重启 Caddy：
+<Frame>
+  <img src="/images/vultr/007.png" alt="点击 Deploy" />
+</Frame>
 
-```bash
-sudo systemctl restart caddy
-```
+点击 Deploy New Server
 
-**开放防火墙端口：**
+<Frame>
+  <img src="/images/vultr/008.png" alt="禁用备份" />
+</Frame>
 
-```bash
-# Ubuntu/Debian (ufw)
-sudo ufw allow 80/tcp
-sudo ufw allow 443/tcp
+点击 Disabled 之后会出现下面的内容，直接勾选并 `Disable Automatic Backups`
 
-# CentOS/RHEL (firewalld)
-sudo firewall-cmd --permanent --add-port=80/tcp
-sudo firewall-cmd --permanent --add-port=443/tcp
-sudo firewall-cmd --reload
-```
+<Frame>
+  <img src="/images/vultr/009.png" alt="确认禁用" />
+</Frame>
+
+下面选择配置系统以及其他的参数配置
+
+配置开机启动脚本，启动脚本会在启动的时候自动安装 AlphaLabs 自研的服务。
+
+<Frame>
+  <img src="/images/vultr/011.png" alt="选择启动脚本" />
+</Frame>
+
+<Frame>
+  <img src="/images/vultr/012.png" alt="初始化中" />
+</Frame>
+
+可以看到在初始化机器
+
+<Frame>
+  <img src="/images/vultr/013.png" alt="状态 Running" />
+</Frame>
+
+当 Status 显示 Running 的时候可以点 Name 进去看机器的详细 Log
+
+<Frame>
+  <img src="/images/vultr/014.png" alt="查看详情" />
+</Frame>
+
+<Frame>
+  <img src="/images/vultr/015.png" alt="查看日志" />
+</Frame>
+
+这里需要等几分钟，需要初始化云服务器以及安装服务
+
+<Frame>
+  <img src="/images/vultr/016.png" alt="部署完成" />
+</Frame>
+
+最后看到这几条信息的时候就说明服务和机器已经完全准备就绪。
+
+### 4. 验证和测试
+
+复制服务器 IP
+
+<Frame>
+  <img src="/images/vultr/017.png" alt="复制 IP" />
+</Frame>
+
+在浏览器中打开 `https://你的IP`。由于使用自建证书，Chrome 会告警，点击 Advanced
+
+<Frame>
+  <img src="/images/vultr/018.png" alt="Chrome 警告" />
+</Frame>
+
+点开之后会有个 Proceed，再点击下，说明你信任这个服务
+
+<Frame>
+  <img src="/images/vultr/019.png" alt="点击 Proceed" />
+</Frame>
+
+看到 `Missing vr-token` 的内容就表示服务器端设置好了
+
+<Frame>
+  <img src="/images/vultr/020.png" alt="服务正常" />
+</Frame>
+
+最后将该 IP 复制到 [https://varvar.strategy.alphalabs.app](https://varvar.strategy.alphalabs.app/)，点击 **Add Account Group**，选择注册的账户，填写 token 和已设置好的 IP，点击测试
+
+<Frame>
+  <img src="/images/vultr/021.png" alt="添加账户组" />
+</Frame>
+
+测试返回以下两种情况就说明是正常的：
+
+<Frame>
+  <img src="/images/vultr/022.png" alt="测试成功1" />
+</Frame>
+
+<Frame>
+  <img src="/images/vultr/023.png" alt="测试成功2" />
+</Frame>
 
 <Warning>
-  使用自签名证书时，浏览器会显示安全警告，点击"高级" → "继续访问"即可。Chrome 也可以直接输入 `thisisunsafe` 跳过。
-</Warning>
-
-### 4. 访问并配置
-
-1. 浏览器访问 `https://your-domain.com` 或 `https://your-server-ip`
-2. 使用 AlphaLabs 官网注册的 **EVM 地址** 和 **客户端密码** 登录
-3. 点击"添加账户组"，配置主账户和对冲账户的 Token 和 Base URL
-4. 配置策略参数后点击"启动"
-
-<Info>
-  获取 Variational API 配置请参考 [Variational 平台配置](/platforms/variational-setup#api-配置)
-</Info>
-
-<Warning>
-  **重要提醒**：策略运行中**请勿刷新页面**，否则需要重新启动策略。
+  如果提示 Base URL 非法，请务必在当前 Chrome profile 里打开 `https://your_ip` 确认信任该证书即可
 </Warning>
 
 ## 获取支持
