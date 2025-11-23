@@ -249,7 +249,11 @@ echo "Access service at: https://$SERVER_IP"
 点击 Deploy New Server
 
 <Frame>
-  <img src="/images/vultr/008.png" alt="禁用备份" />
+  <img src="/images/vultr/007.png" alt="禁用备份" />
+</Frame>
+
+<Frame>
+    <img src="/images/vultr/008.png" alt="禁用备份" />
 </Frame>
 
 点击 Disabled 之后会出现下面的内容，直接勾选并 `Disable Automatic Backups`
@@ -302,7 +306,48 @@ echo "Access service at: https://$SERVER_IP"
   <img src="/images/vultr/017.png" alt="复制 IP" />
 </Frame>
 
-在浏览器中打开 `https://你的IP`。由于使用自建证书，Chrome 会告警，点击 Advanced
+在浏览器中打开 `https://你的IP`。由于使用自建证书，Chrome 会告警。
+
+**推荐方式：启动忽略证书的 Chrome**
+
+<Tabs>
+  <Tab title="macOS">
+    打开终端，输入以下命令启动新的 Chrome 窗口：
+
+    ```bash
+    open -na "Google Chrome" --args --ignore-certificate-errors --ignore-urlfetcher-cert-requests --user-data-dir=/tmp/chrome-dev
+    ```
+
+    这会开启一个新的 Chrome profile，自动忽略证书验证。
+
+    <Frame>
+      <img src="/images/s_019/013.png" alt="macOS 终端命令" />
+    </Frame>
+  </Tab>
+  <Tab title="Windows">
+    1. 按 `Win+R` 输入 `notepad` 打开记事本
+    2. 粘贴以下代码：
+
+    ```bat
+    @echo off
+    start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --ignore-certificate-errors --ignore-urlfetcher-cert-requests --user-data-dir=%TEMP%\chrome-dev
+    ```
+
+    3. 点击"文件" → "另存为"
+    4. 文件名输入：`chrome-dev.bat`（必须带 .bat 后缀）
+    5. 保存类型选择：**所有文件 (\*.\*)**
+    6. 保存位置选桌面，点击"保存"
+    7. 双击桌面的 `chrome-dev.bat` 即可启动
+
+    <Frame>
+      <img src="/images/s_019/012.png" alt="Windows 创建 bat 文件" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+**备选方式：手动信任证书**
+
+点击 Advanced
 
 <Frame>
   <img src="/images/vultr/018.png" alt="Chrome 警告" />
