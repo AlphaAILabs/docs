@@ -306,58 +306,13 @@ echo "Access service at: https://$SERVER_IP"
   <img src="/images/vultr/017.png" alt="复制 IP" />
 </Frame>
 
-在浏览器中打开 `https://你的IP`。由于使用自建证书，Chrome 会告警。
+复制服务器 IP 后，联系 AlphaLabs Dev 进行专属证书分配：
 
-**推荐方式：启动忽略证书的 Chrome**
+<Card title="联系 AlphaLabs Dev" icon="telegram" href="https://t.me/QuarticCat">
+  TG: @QuarticCat
+</Card>
 
-<Tabs>
-  <Tab title="macOS">
-    打开终端，输入以下命令启动新的 Chrome 窗口：
-
-    ```bash
-    open -na "Google Chrome" --args --ignore-certificate-errors --ignore-urlfetcher-cert-requests --user-data-dir=/tmp/chrome-dev
-    ```
-
-    这会开启一个新的 Chrome profile，自动忽略证书验证。
-
-    <Frame>
-      <img src="/images/s_019/013.png" alt="macOS 终端命令" />
-    </Frame>
-  </Tab>
-  <Tab title="Windows">
-    1. 按 `Win+R` 输入 `notepad` 打开记事本
-    2. 粘贴以下代码：
-
-    ```bat
-    @echo off
-    start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --ignore-certificate-errors --ignore-urlfetcher-cert-requests --user-data-dir=%TEMP%\chrome-dev
-    ```
-
-    3. 点击"文件" → "另存为"
-    4. 文件名输入：`chrome-dev.bat`（必须带 .bat 后缀）
-    5. 保存类型选择：**所有文件 (\*.\*)**
-    6. 保存位置选桌面，点击"保存"
-    7. 双击桌面的 `chrome-dev.bat` 即可启动
-
-    <Frame>
-      <img src="/images/s_019/012.png" alt="Windows 创建 bat 文件" />
-    </Frame>
-  </Tab>
-</Tabs>
-
-**备选方式：手动信任证书**
-
-点击 Advanced
-
-<Frame>
-  <img src="/images/vultr/018.png" alt="Chrome 警告" />
-</Frame>
-
-点开之后会有个 Proceed，再点击下，说明你信任这个服务
-
-<Frame>
-  <img src="/images/vultr/019.png" alt="点击 Proceed" />
-</Frame>
+证书配置完成后，在浏览器中打开 `https://你的专属域名` 即可正常访问。
 
 看到 `Missing vr-token` 的内容就表示服务器端设置好了
 
@@ -365,7 +320,7 @@ echo "Access service at: https://$SERVER_IP"
   <img src="/images/vultr/020.png" alt="服务正常" />
 </Frame>
 
-最后将该 IP 复制到 [https://varvar.strategy.alphalabs.app](https://varvar.strategy.alphalabs.app/)，点击 **Add Account Group**，选择注册的账户，填写 token 和已设置好的 IP，点击测试
+最后将该专属域名复制到 [https://varvar.strategy.alphalabs.app](https://varvar.strategy.alphalabs.app/)，点击 **Add Account Group**，选择注册的账户，填写 token 和已分配好的专属域名，点击测试
 
 <Frame>
   <img src="/images/vultr/021.png" alt="添加账户组" />
