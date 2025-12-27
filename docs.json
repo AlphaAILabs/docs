@@ -48,11 +48,7 @@
           {
             "group": "交易插件",
             "pages": [
-              "products/edgex-variational",
-              "products/lighter-edgex",
-              "products/vip-004",
-              "products/lighter-backpack",
-              "products/vip-006",
+              "products/extended-variational",
               "products/backpack-variational",
               "products/lighter-variational"
             ]
@@ -87,6 +83,7 @@
           {
             "group": "安全功能",
             "pages": [
+              "platforms/telegram-alerts",
               "platforms/security-alerts"
             ]
           }

@@ -1,0 +1,282 @@
+---
+title: '[009] Extended-Variational'
+description: 'Extended 与 Variational 平台双策略协同交易插件'
+---
+
+## 产品简介
+
+[009] Extended-Variational 是 AlphaLabs 推出的交易插件，结合 Extended 和 Variational 双平台策略协同技术，针对特定币种提供高效的交易策略。
+
+<Note>
+**产品状态**：仅 VIP 可用
+此产品仅对 VIP 和内部成员开放，申请使用资格请联系 [@DaPangDunCrypto](https://t.me/DaPangDunCrypto)。
+</Note>
+
+<CardGroup cols={3}>
+  <Card title="双平台协同" icon="merge">
+    结合 Extended 和 Variational 策略优势
+  </Card>
+  <Card title="插件形态" icon="puzzle-piece">
+    浏览器插件，便捷操作
+  </Card>
+  <Card title="仅邀请使用" icon="lock">
+    限定用户群体，保证策略效果
+  </Card>
+</CardGroup>
+
+## 定价方案
+
+<Card title="仅邀请可用" icon="key">
+  **邀请制** - 需要获得 AlphaLabs 邀请码
+  - 支持部分特定币种
+  - 提供技术支持
+  - 策略更新维护
+</Card>
+
+## 产品特性
+
+<CardGroup cols={2}>
+  <Card title="双策略协同" icon="merge">
+    结合 Extended 和 Variational 策略优势
+  </Card>
+  <Card title="智能交易" icon="brain">
+    优化的交易策略和执行逻辑
+  </Card>
+  <Card title="风险控制" icon="shield">
+    严格的风险管理机制
+  </Card>
+  <Card title="特定币种" icon="coins">
+    针对部分 token 进行优化
+  </Card>
+</CardGroup>
+
+## 使用指南
+
+### 1. 下载策略程序
+
+<Steps>
+  <Step title="下载压缩包">
+    下载策略程序压缩包：[https://github.com/AlphaAILabs/perp-plugin-strategy-009](https://github.com/AlphaAILabs/perp-plugin-strategy-009)
+  </Step>
+
+  <Step title="解压缩">
+    解压下载的压缩包文件
+  </Step>
+
+  <Step title="加载扩展程序">
+    通过谷歌浏览器 → 打开开发者模式 → 扩展程序 → 管理扩展程序，加载刚刚解压缩的文件夹
+  </Step>
+
+  <Step title="检查加载状态">
+    检查 009 策略已经正常加载
+
+    <img src="/images/s_009/000.png" alt="检查加载状态" />
+  </Step>
+</Steps>
+
+### 2. 配置 AlphaLabs 官网账号
+
+要使用 AlphaLabs 的策略程序，需提前配置好官网账号：
+
+<Steps>
+  <Step title="连接钱包">
+    在官网链接钱包（此钱包不需要是需要跑策略的钱包）
+  </Step>
+
+  <Step title="创建账户">
+    点击"创建账户"，然后按照要求激活策略（请认真填写自己的信息，如果不正确则无法使用策略）
+
+    访问：https://alphalabs.app/products/activation
+  </Step>
+
+  <Step title="等待审核">
+    AlphaLabs 的后台收到信息后，会有专门的 dev 进行审核处理，审核通过则可以使用策略
+  </Step>
+</Steps>
+
+### 3. 注册交易平台账户
+
+<Steps>
+  <Step title="注册 Variational 账户">
+    通过 AlphaLabs 的邀请码注册 Variational 平台：[omni.variational.io?ref=OMNIALPHALAB](https://omni.variational.io/?ref=OMNIALPHALAB)
+  </Step>
+
+  <Step title="注册 Extended 账户">
+    通过 AlphaLabs 的邀请码注册 Extended 平台：[app.extended.exchange/join/ALPHALABS](https://app.extended.exchange/join/ALPHALABS)
+
+    参考配置教程：[Extended 平台配置](/platforms/extended-setup)
+  </Step>
+</Steps>
+
+### 4. 使用程序策略
+
+<Steps>
+  <Step title="登录插件">
+    打开插件，按照激活设置的各项参数登录插件
+
+    <img src="/images/s_009/001.png" alt="登录插件" />
+  </Step>
+
+  <Step title="配置 API Key">
+    接下来需要先配置好 API KEY
+
+    <img src="/images/s_009/002.png" alt="配置 API Key" />
+
+    参考以下教程获取并填写 API Key：
+    - [Variational API 配置教程](/platforms/variational-setup#api-配置)
+    - [Extended API 配置教程](/platforms/extended-setup#api-配置)
+
+    填写完成后点击"保存密钥"
+
+    <img src="/images/s_009/003.png" alt="保存密钥" />
+  </Step>
+
+  <Step title="配置策略参数">
+    配置参数分为多个模块：
+
+    <img src="/images/s_009/004.png" alt="配置策略参数" />
+
+    **① 币种选择**
+
+    选择您需要开合约的币种，两两为一对
+
+    **② 杠杆设置**
+
+    选择两个币种的杠杆倍数
+
+    <Warning>
+      **注意**：两个平台对应币种前端网页的杠杆倍数必须要和这里面设置的保持一样。
+
+      当 API KEYS 填写完成之后，并且交易参数设置完成之后会自动去调整杠杆，但是需要用户在两个平台上查看杠杆修改是否生效。
+    </Warning>
+
+    **③ 波动率阈值**
+
+    设定当对应币种相对于开仓价格波动多少则进行平仓
+
+    - 波动值设置的小则开平仓频率会变高
+    - 波动值设置的大则开平仓频率会变低
+
+    **④ 交易时间段设置（机器所在时区）**
+
+    开始时间：每天开启交易的起始时间
+
+    结束时间：每天开启交易的结束时间
+
+    比如：北京时间，7:30 ~ 22:30，策略将会只在这个时间段内进行交易，其他时间段将处于休眠状态
+
+    **⑤ 最小持仓时间**
+
+    最小值（分钟）：最小持仓时间随机数的最小值
+
+    最大值（分钟）：最小持仓时间随机数的最大值
+
+    比如：设置了 60min ~ 120min，则该 token 的最小持仓时间将在这中间去随机。为了防止爆仓，最小持仓时间和波动率阈值之间是 OR 的关系，也就是满足其中一个条件将触发平仓。
+
+    **⑥ 每天可交易的最大交易数**
+
+    最小值：每天可以交易的最大次数的随机最小值
+
+    最大值：每天可以交易的最大次数的随机最大值
+
+    开仓和平仓将分别计算一次。
+
+    比如：XRP 开仓计算一次，平仓计算一次。假设每天只允许开 50 次，则之后不会再触发交易。
+
+    **⑦ 拆单时间间隔**
+
+    最小值（分钟）：拆单时间间隔随机数的最小值
+
+    最大值（分钟）：拆单时间间隔随机数的最大值
+
+    为了模拟真人的下单行为，拆单时间间隔将会是分钟级别的，由用户自行设定，防止 VAR 系统认为用户在攻击 OLP。
+
+    **⑧ Extended 和 Variational 开仓 Size**
+
+    设定对应币种单个开仓的数额范围，系统会根据设定在范围内随机数额开单，保证开仓数量的随机性
+
+    **⑨ 批次运行随机时间区间**
+
+    设置下单之后暂停多少秒再进行下一单的操作，增加时间上的随机性
+
+    **⑩ 滑点设置**
+
+    如果选择交易小币种则需要将点差设置到 0.02%—0.03%
+
+    **Telegram 告警配置**
+
+    策略启动、策略异常等情况发生之后，都会通知用户。
+
+    参考：[Telegram 告警配置](/platforms/telegram-alerts)
+
+    <img src="/images/s_009/005.png" alt="Telegram 配置 1" />
+    <img src="/images/s_009/006.png" alt="Telegram 配置 2" />
+
+    ---
+
+    全部设置完成后，点击"保存设置"
+
+    <img src="/images/s_009/007.png" alt="保存设置" />
+  </Step>
+
+  <Step title="启动策略">
+    点击主页面上的"启动策略"，然后观察策略运行情况即可
+
+    <img src="/images/s_009/008.png" alt="启动策略" />
+  </Step>
+</Steps>
+
+## 重要注意事项
+
+<Warning>
+  **运行环境要求**：
+  - 运行量化工具的电脑：**不可以休眠，不可以关机**
+  - 尽量选用**日本、新加坡**等地的**静态住宅 IP**
+  - 禁止**同 IP 服务器**开启同一个账户的多组策略
+  - 仅支持部分特定币种，请咨询 AlphaLabs 团队确认
+</Warning>
+
+<Danger>
+  **邀请制产品**：
+  - 本产品仅对受邀用户开放
+  - 需要联系 AlphaLabs 团队获取使用权限
+  - 请勿分享账户或邀请码
+</Danger>
+
+## 支持的币种
+
+本产品支持部分特定 token，具体支持的币种列表请联系 AlphaLabs 团队获取最新信息。
+
+## 相关产品
+
+<CardGroup cols={2}>
+  <Card title="[013] Backpack-Variational" icon="key" href="/products/backpack-variational">
+    **仅 VIP 可用** - Backpack 与 Variational 平台
+    - 双策略协同
+    - 超低磨损率和稳定收益
+  </Card>
+  <Card title="[014] Lighter-Variational" icon="key" href="/products/lighter-variational">
+    **仅 VIP 可用** - Lighter 与 Variational 平台
+    - 业界最低磨损
+    - 0风险敞口，超高积分效率
+  </Card>
+</CardGroup>
+
+## 获取支持
+
+<CardGroup cols={2}>
+  <Card title="Telegram 群组" icon="users" href="https://t.co/ZNnay6dnxz">
+    加入社区获取技术支持
+  </Card>
+  <Card title="X (Twitter)" icon="x-twitter" href="https://x.com/Alpha_alabs">
+    关注官方账号获取更新
+  </Card>
+</CardGroup>
+
+## 联系我们
+
+如需获取 009 Extended-Variational 产品的使用权限或了解更多信息，请通过以下方式联系 AlphaLabs 团队：
+
+<Card title="联系 AlphaLabs Dev" icon="telegram" href="https://t.me/QuarticCat">
+  TG: @QuarticCat
+</Card>
