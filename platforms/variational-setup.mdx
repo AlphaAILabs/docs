@@ -72,13 +72,27 @@ icon: 'https://cdn.prod.website-files.com/654823724edc4c7dbddbbd3a/656767a346e24
         <img src="/images/variational/002.png" alt="获取 vr-token" />
     </Step>
 
+    <Step title="获取交易信息">
+        在开发者工具中获取以下交易信息参数：
+
+        - **datadog parent id**
+        - **datadog trace id**
+        - **traceparent**
+
+        <img src="/images/variational/003.png" alt="获取交易信息参数" />
+
+        <Note>
+          这些参数用于策略运行时的交易追踪和监控
+        </Note>
+    </Step>
+
     <Step title="复制参数">
-        复制该参数填入策略配置中
+        复制所有参数填入策略配置中
     </Step>
 </Steps>
 
 <Warning>
-    **重要提醒**：请妥善保管您的 API Key，不要泄露给他人。
+    **重要提醒**：请妥善保管您的 API Key 和交易信息参数，不要泄露给他人。
 </Warning>
 
 ## 安全提醒
